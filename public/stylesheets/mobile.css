@@ -18,3 +18,5 @@ ul{
 
 ul.tasks li {background:#dedede; margin-bottom:.25em; padding:5px 9px; font-size:22px; border-radius:4px; position:relative;}
 ul.finished-tasks li {background:#eee; color:#999;}
+
+ul.pending-tasks div.boolean { display:inline; }
