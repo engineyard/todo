@@ -4,6 +4,7 @@ h1,h2,h3,h4,h5,h6 { font-weight:normal; letter-spacing:-1px; margin:0; padding:0
 ul, ol {margin:0; padding:0; list-style-position:inside;}
 
 #tabs {background:#fff;}
+#tabs .ui-tabs-selected a {color:#C00 !important;}
 
 #tabs div.new-task {overflow:auto;}
 #tabs div.new-task form {overflow:auto;}
