@@ -3,11 +3,10 @@ class TasksController < ApplicationController
   # GET /tasks.xml
   def index
     
-    @done_tasks = Task.where(:done => true)
     @todo = Task.where(:done => false)
     @task = Task.new
     @lists = List.all
-    @current_list = @lists.first
+    @list = List.new
     
     respond_to do |format|
       format.html # index.html.erb

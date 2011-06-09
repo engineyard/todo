@@ -1,0 +1,9 @@
+h1,h2,h3,h4,h5,h6 { font-weight:normal; letter-spacing:-1px;}
+ul, ol {margin:0; padding:0; list-style-position:inside;}
+
+#tabs div.new-task {overflow:auto;}
+#tabs div.new-task form {overflow:auto;}
+#tabs div.new-task form div.task-input {float:left; width:80%;}
+#tabs div.new-task form div.task-button {float:right; width:18%;}
+
+#tabs div.new-task form div.task-input input {width:100%;}
