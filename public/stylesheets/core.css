@@ -1,34 +1,33 @@
 body { background-color: #f8f8f8; color: #333; margin:0; padding:0; }
 
-h1,h2,h3,h4,h5,h6 { font-weight:normal; letter-spacing:-1px; margin:0; padding:0; margin-bottom:.7em;}
+h1,h2,h3,h4,h5,h6 { font-weight:normal; letter-spacing:-1px; margin:0; padding:0; margin-bottom:.7em; color:#777;}
 ul, ol {margin:0; padding:0; list-style-position:inside;}
 
 #header {height:77px; background:#a00 url("/images/header.png") scroll repeat-x 0 0; position:relative; overflow:visible;}
 #header h1 {color:#FFF; position:absolute; left:100px; top:20px; font-size:18px;}
 #header h1 span.intro {display:block; font-weight:bold; margin-bottom:4px; font-size:22px;}
+#header h1 span.intro span {font-weight:normal; font-size:.65em}
+#header p.sample {color:#fff; margin:0; padding:0; position:absolute; top:30px; right:30px;}
 #logo {height:81px; width:50px; background:url("/images/logo.png") scroll no-repeat 0 0; position:absolute; left:35px; top:10px;}
-#all { background:#f8f8f8 url("/images/clouds.png") scroll repeat-x 0 -18px; padding:35px;}
+#all { background:#f8f8f8 url("/images/clouds.png") scroll repeat-x 0 -13px; padding:35px;}
 
-
-#tabs {background:#fff;}
-#tabs .ui-tabs-selected a {color:#C00 !important;}
-
+#tabs {background:#fff; margin-top:20px;}
 #tabs div.new-task {overflow:auto;}
 #tabs div.new-task form {overflow:auto;}
 #tabs div.split-fields {
   overflow:auto; padding:10px; border-radius:3px;
-  background:#C00;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C00', endColorstr='#900');
-  background: -webkit-gradient(linear, left top, left bottom, from(#C00), to(#900));
-  background: -moz-linear-gradient(top,  #C00,  #900);
+  background:#bad5e8;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bad5e8', endColorstr='#80b2d3');
+  background: -webkit-gradient(linear, left top, left bottom, from(#bad5e8), to(#80b2d3));
+  background: -moz-linear-gradient(top,  #bad5e8,  #80b2d3);
 }
 
 #tabs div.split-fields div.field {float:left; width:85%; margin:0; padding:0; }
 #tabs div.split-fields div.button {float:right; width:13%;}
 
-#tabs div.split-fields div.field input {width:100%; font-size:16px; padding:4px; border:2px solid #ddd; border-radius:2px; background:#ddd;}
+#tabs div.split-fields div.field input {width:100%; font-size:16px; padding:4px; border:2px solid #eee; border-radius:2px; background:#eee;}
 #tabs div.split-fields div.field input:focus {background:#FFF;}
-#tabs div.split-fields div.button input {border:2px solid #900; background:#fff; color:#c00; line-height:23px; cursor:pointer; text-align:center; width:98%;}
+#tabs div.split-fields div.button input {border:2px solid #80b2d3; background:#fff; color:#80b2d3; line-height:23px; cursor:pointer; text-align:center; width:98%;}
 #tabs div.split-fields div.button input:hover { color:#000; border-color:#500;}
 
 ul.tasks {list-style-type:none; }
@@ -56,3 +55,7 @@ ul.pending-tasks { margin:15px 0; }
 ul.pending-tasks div.boolean { display:inline; }
 
 .hidden{ display:none; }
+
+/* Overrides */
+.ui-widget-header {border-color:#ccc !important;}
+#tabs .ui-tabs-selected a {color:#80b2d3 !important;}
