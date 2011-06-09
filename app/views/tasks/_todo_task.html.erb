@@ -1,0 +1,9 @@
+<%= simple_form_for(@todo) do |f| %>
+
+ <li> 
+	<%= f.input :done , :label => false %>
+	<%= @todo.name %>   
+	<%= link_to 'X', @todo, :confirm => 'Are you sure?', :method => :delete %>
+    <%= f.button :submit , :id => 'task_' + @todo.id.to_s %>
+  </li>
+<% end %>

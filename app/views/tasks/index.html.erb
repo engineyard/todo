@@ -1,0 +1,66 @@
+
+
+
+
+
+
+
+<h1>Listing tasks</h1>
+<div id='new_task_area'>
+
+	<%= simple_form_for(@task) do |f| %>
+
+	    <%= f.input :name , :label => false %>
+
+	    <%= f.input :done , :as => :hidden,  :input_html => {:value => false }%>
+	
+		 <%= f.input :list_id , :as => :hidden,   :input_html => {:value => @current_list.id }%>
+
+	    <%= f.button :submit %>
+
+	<% end %>
+	
+</div>
+<div id='tabs'>
+	<ul>
+	<% @lists.each do |list| %>
+		<li>
+		<%= list.name %>
+		</li>
+	<% end %>
+	</ul>
+</div>
+
+<ul id='todo_list'>
+<% @todo.each do |task| %>
+
+<%= simple_form_for(task) do |f| %>
+
+ <li> 
+	<%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
+	<%= f.button :submit ,  :class => 'hidden'   %>
+	<%= task.name %>   
+	<%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
+    
+  </li>
+<% end %>
+
+
+<% end %>
+</ul>
+
+--Completed--
+<ul>
+<% @done_tasks.each do |task| %>
+	<li><%= task.name %> </li>
+<% end %>
+</ul>
+
+<script>
+	$('.box').click(function(event) {
+		$(this).parent().next().click();
+	});
+
+</script>
+
+
