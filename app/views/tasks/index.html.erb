@@ -8,7 +8,7 @@
 		<% @count += 1%>
 		<% end %>
 		<li>
-		    <a href="#tabs-new-list">New +</a>
+		    <a href="#tabs-new-list">Add +</a>
 	    </li>
 	</ul>
 
@@ -24,29 +24,33 @@
                 <%= f.input :done , :as => :hidden,  :input_html => {:value => false }%>
     		    <%= f.input :list_id , :as => :hidden,   :input_html => {:value => list.id }%>
 
-                <div class="task-input">
-                    <%= f.input :name , :label => false, :placeholder => "Enter a new task" %>
+                <div class="split-fields">
+                    <div class="field">
+                        <%= f.input :name , :label => false, :placeholder => "Enter a new task" %>
+                    </div>
+            	    <div class="button">
+            	        <%= f.button :submit,  "Add Task" %>
+            	    </div>
                 </div>
-        	    <div class="task-button">
-        	        <%= f.button :submit %>
-        	    </div>
+                
         	    
         	<% end %>	    
 	    </div>
 
 	
-		<ul id='todo_list'>
+		<ul  class="tasks pending-tasks">
 			<% list.tasks.each do |task| %>
 
 				<% unless task.done %>
 					<%= simple_form_for(task) do |f| %>
 
 			 		<li> 
-					<%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
-					<%= f.button :submit ,  :class => 'hidden'   %>
-					<%= task.name %>   
-					<%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
-
+					    <%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
+					    <%= f.button :submit ,  :class => 'hidden'   %>
+					    <%= task.name %>
+					    <p class="delete-task">
+					        <%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
+					    </p>
 			  		</li>
 		
 					<% end %>
@@ -54,12 +58,22 @@
 			<% end %>
 		</ul>
 	
-		<h2>Finished</h2>
-		<ul>
-			<% list.done_tasks.each do |task| %>
-				<li><%= task.name %> </li>
-				<% end %>
-		</ul>
+		<h2>Finished Tasks</h2>
+		
+		<% if list.done_tasks.empty? %>
+		    <p>No finished tasks for this list.  Add a task above.</p>
+		<% else %>		
+    		<ul class="tasks finished-tasks">
+    		    <% list.done_tasks.each do |task| %>
+        		<li class="finished">
+        		    <%= task.name %>
+        		    <p class="delete-task">
+				        <%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
+				    </p>
+        		</li>
+        		<% end %>
+    		</ul>
+		<% end %>
 	
 	</div>
 	<% @count += 1%>
@@ -75,13 +89,23 @@
 </div>
 
 
+<% if listid = params[:list] %>
+    <% prevlist = List.find listid %>
+    <% tabindex = @lists.index(prevlist) %>
+<% end %> 
+
+
 <script>
 	$('.box').click(function(event) {
 		$(this).parent().next().click();
 	});
 	
 	$(function() {
-		$( "#tabs" ).tabs();
+	    var opts = {};
+	    <% if params[:list] %>
+	        opts.selected = <%= tabindex %>
+	    <% end %>
+		$( "#tabs" ).tabs(opts);
 	});
 
 </script>

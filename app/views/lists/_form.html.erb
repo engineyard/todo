@@ -11,11 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+
+  <div class="split-fields">
+    <div class="field">
+        <%= f.text_field :name, :placeholder => "New List Name" %>
+    </div>
+    <div class="button">
+        <%= f.submit "Add List" %>
+    </div>  
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  
 <% end %>
