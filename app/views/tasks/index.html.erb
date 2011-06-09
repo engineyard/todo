@@ -31,18 +31,19 @@
 		<ul id='todo_list'>
 			<% list.tasks.each do |task| %>
 
-				<%= simple_form_for(task) do |f| %>
+				<% unless task.done %>
+					<%= simple_form_for(task) do |f| %>
 
-		 		<li> 
-				<%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
-				<%= f.button :submit ,  :class => 'hidden'   %>
-				<%= task.name %>   
-				<%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
+			 		<li> 
+					<%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
+					<%= f.button :submit ,  :class => 'hidden'   %>
+					<%= task.name %>   
+					<%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
 
-		  		</li>
+			  		</li>
+		
+					<% end %>
 				<% end %>
-
-
 			<% end %>
 		</ul>
 	
