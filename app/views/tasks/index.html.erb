@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <h1>Listing tasks</h1>
 <div id='new_task_area'>
 
@@ -29,32 +22,46 @@
 		</li>
 	<% end %>
 	</ul>
+	<%= link_to 'New List', new_list_path %>
+	
+	
+	<% @lists.each do |list| %>
+	<div>
+		<h3><%= list.name %> </h3>
+		<ul id='todo_list'>
+			<% list.tasks.each do |task| %>
+
+				<%= simple_form_for(task) do |f| %>
+
+		 		<li> 
+				<%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
+				<%= f.button :submit ,  :class => 'hidden'   %>
+				<%= task.name %>   
+				<%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
+
+		  		</li>
+				<% end %>
+
+
+			<% end %>
+		</ul>
+	
+		--Completed--
+		<ul>
+			<% @done_tasks.each do |task| %>
+				<li><%= task.name %> </li>
+				<% end %>
+		</ul>
+	
+	</div>
+	
+	<%end%>
+	
 </div>
 
-<ul id='todo_list'>
-<% @todo.each do |task| %>
-
-<%= simple_form_for(task) do |f| %>
-
- <li> 
-	<%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
-	<%= f.button :submit ,  :class => 'hidden'   %>
-	<%= task.name %>   
-	<%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
-    
-  </li>
-<% end %>
 
 
-<% end %>
-</ul>
 
---Completed--
-<ul>
-<% @done_tasks.each do |task| %>
-	<li><%= task.name %> </li>
-<% end %>
-</ul>
 
 <script>
 	$('.box').click(function(event) {

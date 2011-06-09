@@ -2423,3 +2423,102 @@ Started GET "/tasks" for 127.0.0.1 at Wed Jun 08 17:02:57 -0700 2011
   [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
 Rendered tasks/index.html.erb within layouts/application (27.7ms)
 Completed 200 OK in 42ms (Views: 32.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Wed Jun 08 17:06:42 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists"
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 'f'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'
+Rendered tasks/index.html.erb within layouts/application (100.6ms)
+Completed 200 OK in 143ms (Views: 105.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/lists" for 127.0.0.1 at Wed Jun 08 17:07:08 -0700 2011
+  Processing by ListsController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+Rendered lists/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 26ms (Views: 17.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/new" for 127.0.0.1 at Wed Jun 08 17:07:09 -0700 2011
+  Processing by ListsController#new as HTML
+Rendered lists/_form.html.erb (57.5ms)
+Rendered lists/new.html.erb within layouts/application (61.0ms)
+Completed 200 OK in 71ms (Views: 65.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/lists" for 127.0.0.1 at Wed Jun 08 17:07:15 -0700 2011
+  Processing by ListsController#create as HTML
+  Parameters: {"commit"=>"Create List", "list"=>{"name"=>"mine"}, "authenticity_token"=>"/H9BhqhATf22r+0svtpVW30l7XWE9NQcp04uLfV6LuA=", "utf8"=>"✓"}
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "lists" ("updated_at", "created_at", "name") VALUES ('2011-06-09 00:07:15.688733', '2011-06-09 00:07:15.688733', 'mine')
+Redirected to http://localhost:3000/lists/2
+Completed 302 Found in 14ms
+
+
+Started GET "/lists/2" for 127.0.0.1 at Wed Jun 08 17:07:15 -0700 2011
+  Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT "lists".* FROM "lists" WHERE "lists"."id" = 2 LIMIT 1[0m
+Rendered lists/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 24ms (Views: 16.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jun 08 17:07:20 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists"
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 'f'[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'
+Rendered tasks/index.html.erb within layouts/application (81.2ms)
+Completed 200 OK in 96ms (Views: 85.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jun 08 17:09:06 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 'f'
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+Rendered tasks/index.html.erb within layouts/application (97.2ms)
+Completed 200 OK in 113ms (Views: 101.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jun 08 17:09:18 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists"
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 'f'[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'
+Rendered tasks/index.html.erb within layouts/application (102.1ms)
+Completed 200 OK in 118ms (Views: 106.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jun 08 17:10:56 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.3ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 'f'
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+Rendered tasks/index.html.erb within layouts/application (114.1ms)
+Completed 200 OK in 132ms (Views: 119.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jun 08 17:11:54 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists"
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)[0m
+  [1m[35mTask Load (3.8ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)[0m
+Rendered tasks/index.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 120ms (Views: 37.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jun 08 17:13:30 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[35mList Load (0.3ms)[0m  SELECT "lists".* FROM "lists"
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)[0m
+Rendered tasks/index.html.erb within layouts/application (78.2ms)
+Completed 200 OK in 97ms (Views: 82.3ms | ActiveRecord: 0.8ms)
