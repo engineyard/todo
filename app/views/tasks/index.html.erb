@@ -8,7 +8,7 @@
 		<% @count += 1%>
 		<% end %>
 		<li>
-		    <a href="#tabs-new-list">Add +</a>
+		    <a href="#tabs-new-list">Add List +</a>
 	    </li>
 	</ul>
 
@@ -57,19 +57,15 @@
 				<% end %>
 			<% end %>
 		</ul>
-	
-		<h2>Finished Tasks</h2>
 		
-		<% if list.done_tasks.empty? %>
-		    <p>No finished tasks for this list.  Add a task above.</p>
-		<% else %>		
+		<% unless list.done_tasks.empty? %>	
     		<ul class="tasks finished-tasks">
     		    <% list.done_tasks.each do |task| %>
         		<li class="finished">
         		    <%= task.name %>
         		    <p class="delete-task">
-				        <%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
-				    </p>
+    			        <%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
+    			    </p>
         		</li>
         		<% end %>
     		</ul>
@@ -82,6 +78,7 @@
 	
 
     <div id="tabs-new-list">
+        <h2>Add a new list</h2>
 	    <%= render :partial => '/lists/form' %>
 	</div>
 

@@ -1,36 +1,54 @@
-body { background-color: #ededed; color: #333; }
+body { background-color: #ededed; color: #333; margin:15px; padding:0; }
 
-h1,h2,h3,h4,h5,h6 { font-weight:normal; letter-spacing:-1px;}
+h1,h2,h3,h4,h5,h6 { font-weight:normal; letter-spacing:-1px; margin:0; padding:0; margin-bottom:.7em;}
 ul, ol {margin:0; padding:0; list-style-position:inside;}
 
 #tabs {background:#fff;}
 
-#tabs div.new-task { }
-
-
 #tabs div.new-task {overflow:auto;}
 #tabs div.new-task form {overflow:auto;}
-#tabs div.split-fields {overflow:auto; background:#ccc; padding:10px; border-radius:3px;}
+#tabs div.split-fields {
+  overflow:auto; padding:10px; border-radius:3px;
+  background:#444;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444', endColorstr='#666');
+  background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#666));
+  background: -moz-linear-gradient(top,  #444,  #666);
+}
+
+
 #tabs div.split-fields div.field {float:left; width:85%; margin:0; padding:0; }
 #tabs div.split-fields div.button {float:right; width:13%;}
 
-#tabs div.split-fields div.field input {width:100%; font-size:15px; padding:4px; border:2px solid #aaa;}
-#tabs div.split-fields div.button input {border:2px solid #000; background:#333; color:#aaa; line-height:20px; cursor:pointer; text-align:center; width:98%;}
-#tabs div.split-fields div.button input:hover {background:#000; color:#ddd;}
+#tabs div.split-fields div.field input {width:100%; font-size:15px; padding:4px; border:2px solid #ddd; border-radius:2px; background:#ddd;}
+#tabs div.split-fields div.field input:focus {background:#FFF;}
+#tabs div.split-fields div.button input {border:2px solid #333; background:#888; color:#ddd; line-height:21px; cursor:pointer; text-align:center; width:98%;}
+#tabs div.split-fields div.button input:hover {background:#aaa; color:#fff;}
 
 
 ul.tasks {list-style-type:none; }
-ul.tasks li {background:#dedede; margin-bottom:.25em; padding:5px 9px; font-size:14px; border-radius:4px; position:relative;}
-ul.finished-tasks li {background:#eee; color:#999;}
+ul.tasks li { margin-bottom:.4em; padding:5px 9px; font-size:14px; border-radius:4px; position:relative;
 
-ul.tasks li p.delete-task {position:absolute; top:6px; right:9px; margin:0; padding:0; line-height:1em;}
-ul.tasks li p.delete-task a {text-decoration:none;}
-ul.pending-tasks { margin-top:15px; }
+  background:#dedede;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dedede', endColorstr='#ccc');
+  background: -webkit-gradient(linear, left top, left bottom, from(#dedede), to(#ccc));
+  background: -moz-linear-gradient(top,  #dedede,  #ccc);
+}
+
+
+ul.tasks li p.delete-task {position:absolute; top:6px; right:6px; margin:0; padding:0; line-height:1em;}
+ul.tasks li p.delete-task a {text-decoration:none; font-weight:bold; display:block; padding:2px 4px; background:#bbb; color:#666; border-radius:2px;}
+ul.tasks li p.delete-task a:hover { color:#000; background:#aaa;}
+
+
+ul.finished-tasks li { color:#999;
+  background: #eee;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#ddd');
+  background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#ddd));
+  background: -moz-linear-gradient(top,  #efefef,  #ddd);
+}
+
+ul.finished-tasks li p.delete-task a {background:#ccc; color:#aaa;}
+ul.pending-tasks { margin:15px 0; }
 ul.pending-tasks div.boolean { display:inline; }
 
-#new_task_area div.input{
-	display:inline;
-}
-.hidden{
-	display:none;
-}
+.hidden{ display:none; }
