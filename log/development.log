@@ -3026,3 +3026,375 @@ Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:25:12 -0700 2011
   [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)
 Rendered tasks/index.html.erb within layouts/application (71.5ms)
 Completed 200 OK in 86ms (Views: 75.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:29:08 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+ERROR: compiling _app_views_tasks_index_html_erb___429108391_2182458240_0 RAISED compile error
+/Users/ctosswill/contest/app/views/tasks/index.html.erb:21: syntax error, unexpected tUPLUS, expecting ')'
+...ffer.append= ('#'+ list.name +'_tab');@output_buffer.safe_co...
+                              ^
+Function body:           def _app_views_tasks_index_html_erb___429108391_2182458240_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "tasks/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Listing tasks</h1>
+<div id=\'new_task_area\'>
+
+	');@output_buffer.append=  simple_form_for(@task) do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+	    ');@output_buffer.append= ( f.input :name , :label => false );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+	    ');@output_buffer.append= ( f.input :done , :as => :hidden,  :input_html => {:value => false });@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	
+		 ');@output_buffer.append= ( f.input :list_id , :as => :hidden,   :input_html => {:value => @current_list.id });@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+	    ');@output_buffer.append= ( f.button :submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+');	 end 
+@output_buffer.safe_concat('	
+</div>
+<div id=\'tabs\'>
+	<ul>
+');@output_buffer.append_if_string= 	 @lists.each do |list| 
+@output_buffer.safe_concat('		<li>
+		<a href=\'');@output_buffer.append= ('#'+ list.name +'_tab');@output_buffer.safe_concat('\'>');@output_buffer.append= ( list.name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		</li>
+');	 end 
+@output_buffer.safe_concat('	</ul>
+	');@output_buffer.append= ( link_to 'New List', new_list_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	
+	
+');@output_buffer.append_if_string= 	 @lists.each do |list| 
+@output_buffer.safe_concat('	<div id=\''); list.name +'_tab' ;@output_buffer.safe_concat('\'>
+		<h3>');@output_buffer.append= ( list.name );@output_buffer.safe_concat(' </h3>
+		<ul id=\'todo_list\'>
+');@output_buffer.append_if_string= 			 list.tasks.each do |task| 
+@output_buffer.safe_concat('
+');				 unless task.done 
+@output_buffer.safe_concat('					');@output_buffer.append=  simple_form_for(task) do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+			 		<li> 
+					');@output_buffer.append= ( f.input :done ,   :input_html => { :class => 'box'  } , :label => false  );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('					');@output_buffer.append= ( f.button :submit ,  :class => 'hidden'   );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('					');@output_buffer.append= ( task.name );@output_buffer.safe_concat('   
+');@output_buffer.safe_concat('					');@output_buffer.append= ( link_to 'X', task, :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+			  		</li>
+		
+');					 end 
+				 end 
+			 end 
+@output_buffer.safe_concat('		</ul>
+	
+		--Completed--
+		<ul>
+');@output_buffer.append_if_string= 			 @done_tasks.each do |task| 
+@output_buffer.safe_concat('				<li>');@output_buffer.append= ( task.name );@output_buffer.safe_concat(' </li>
+');				 end 
+@output_buffer.safe_concat('		</ul>
+	
+	</div>
+	
+');	end
+@output_buffer.safe_concat('	
+</div>
+
+
+
+
+
+<script>
+	$(\'.box\').click(function(event) {
+		$(this).parent().next().click();
+	});
+
+</script>
+
+
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/ctosswill/contest/app/views/tasks/index.html.erb:78:in `compile'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/ctosswill/.gem/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/Users/ctosswill/contest/app/controllers/tasks_controller.rb:12:in `index'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__1954900289__process_action__199225275__callbacks'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `action'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Users/ctosswill/.gem/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/ctosswill/.gem/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/ctosswill/.gem/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/ctosswill/.gem/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+/Users/ctosswill/.gem/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+/Library/Ruby/Gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered tasks/index.html.erb within layouts/application (3.8ms)
+Completed   in 18ms
+
+ActionView::Template::Error (compile error
+/Users/ctosswill/contest/app/views/tasks/index.html.erb:21: syntax error, unexpected tUPLUS, expecting ')'
+...ffer.append= ('#'+ list.name +'_tab');@output_buffer.safe_co...
+                              ^):
+    18: 	<ul>
+    19: 	<% @lists.each do |list| %>
+    20: 		<li>
+    21: 		<a href='<%='#'+ list.name +'_tab'%>'><%= list.name %>
+    22: 		</li>
+    23: 	<% end %>
+    24: 	</ul>
+  app/views/tasks/index.html.erb:78:in `compile'
+  app/controllers/tasks_controller.rb:12:in `index'
+
+Rendered /Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 'f'[0m
+Rendered /Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (78.9ms)
+Rendered /Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (84.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:29:55 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists"
+Rendered tasks/index.html.erb within layouts/application (65.4ms)
+Completed   in 80ms
+
+ActionView::Template::Error (undefined method `+@' for "_tab":String):
+    26: 	
+    27: 	
+    28: 	<% @lists.each do |list| %>
+    29: 	<div id='<% list.name +'_tab' %>'>
+    30: 		<h3><%= list.name %> </h3>
+    31: 		<ul id='todo_list'>
+    32: 			<% list.tasks.each do |task| %>
+  app/views/tasks/index.html.erb:29:in `_app_views_tasks_index_html_erb___429108391_2182787060_0'
+  app/views/tasks/index.html.erb:28:in `each'
+  app/views/tasks/index.html.erb:28:in `_app_views_tasks_index_html_erb___429108391_2182787060_0'
+  app/controllers/tasks_controller.rb:12:in `index'
+
+Rendered /Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 'f'
+Rendered /Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.6ms)
+Rendered /Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.9ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:30:14 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)
+Rendered tasks/index.html.erb within layouts/application (78.4ms)
+Completed 200 OK in 93ms (Views: 82.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/mine" for 127.0.0.1 at Thu Jun 09 09:30:25 -0700 2011
+
+ActionController::RoutingError (No route matches "/mine"):
+  
+
+Rendered /Users/ctosswill/.gem/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:30:49 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)
+Rendered tasks/index.html.erb within layouts/application (97.5ms)
+Completed 200 OK in 113ms (Views: 101.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:31:12 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)
+Rendered tasks/index.html.erb within layouts/application (85.7ms)
+Completed 200 OK in 101ms (Views: 89.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:31:39 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)
+Rendered tasks/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 96ms (Views: 27.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:31:51 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)
+Rendered tasks/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 37ms (Views: 26.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:34:03 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)
+Rendered tasks/index.html.erb within layouts/application (75.4ms)
+Completed 200 OK in 91ms (Views: 79.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:39:08 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)
+Rendered tasks/index.html.erb within layouts/application (94.1ms)
+Completed 200 OK in 113ms (Views: 98.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:40:44 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)
+Rendered tasks/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 101ms (Views: 90.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:41:21 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[36mList Load (0.3ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)
+Rendered tasks/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 44ms (Views: 28.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at Thu Jun 09 09:41:29 -0700 2011
+  Processing by TasksController#create as HTML
+  Parameters: {"commit"=>"Create Task", "authenticity_token"=>"/H9BhqhATf22r+0svtpVW30l7XWE9NQcp04uLfV6LuA=", "utf8"=>"✓", "task"=>{"name"=>"my task", "done"=>"false", "list_id"=>"1"}}
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "list_id", "updated_at", "done") VALUES ('2011-06-09 16:41:29.536657', 'my task', 1, '2011-06-09 16:41:29.536657', 'f')[0m
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 12ms
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:41:29 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists"
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)[0m
+Rendered tasks/index.html.erb within layouts/application (88.8ms)
+Completed 200 OK in 103ms (Views: 92.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at Thu Jun 09 09:42:13 -0700 2011
+  Processing by TasksController#index as HTML
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists"
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 1)[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."done" = 't'
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE ("tasks".list_id = 2)[0m
+Rendered tasks/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 118ms (Views: 32.0ms | ActiveRecord: 0.7ms)

@@ -14,20 +14,27 @@
 	<% end %>
 	
 </div>
+
+	<%= link_to 'New List', new_list_path %>
+
+
 <div id='tabs'>
 	<ul>
-	<% @lists.each do |list| %>
+		<% @count = 1%>
+		<% @lists.each do |list| %>
 		<li>
-		<%= list.name %>
+			<a href="<%= '#' + 'tabs-' + @count.to_s %>"><%= list.name %></a>
 		</li>
-	<% end %>
+		<% @count += 1%>
+		<% end %>
 	</ul>
-	<%= link_to 'New List', new_list_path %>
+
 	
-	
+	<% @count = 1%>
 	<% @lists.each do |list| %>
-	<div>
-		<h3><%= list.name %> </h3>
+	
+	<div id='tabs-<%= @count %>'>
+	
 		<ul id='todo_list'>
 			<% list.tasks.each do |task| %>
 
@@ -55,18 +62,20 @@
 		</ul>
 	
 	</div>
+	<% @count += 1%>
 	
 	<%end%>
 	
 </div>
 
 
-
-
-
 <script>
 	$('.box').click(function(event) {
 		$(this).parent().next().click();
+	});
+	
+	$(function() {
+		$( "#tabs" ).tabs();
 	});
 
 </script>
