@@ -76,7 +76,7 @@ class ListsController < ApplicationController
     @list.destroy
 
     respond_to do |format|
-      format.html { redirect_to(lists_url) }
+      format.html { redirect_to(tasks_url) }
       format.xml  { head :ok }
     end
   end
