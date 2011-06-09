@@ -47,7 +47,9 @@ ul.tasks li p.delete-task {position:absolute; top:9px; right:9px; margin:0; padd
 ul.tasks li p.delete-task a {text-decoration:none; font-weight:bold; display:block; padding:2px 4px; background:#bbb; color:#666; border-radius:2px;}
 ul.tasks li p.delete-task a:hover { color:#000; background:#aaa;}
 
-ul.finished-tasks li { color:#999;
+ul.finished-tasks li { 
+  font-size:12px;
+  color:#999;
   padding:5px 9px;
   background: #eee;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#ddd');
@@ -66,4 +68,6 @@ ul.pending-tasks div.boolean { display:inline; }
 
 /* Overrides */
 .ui-widget-header {border-color:#ccc !important;}
+#tabs div.tab {padding:14px !important;}
 #tabs .ui-tabs-selected a {color:#80b2d3 !important;}
+#tabs .ui-tabs-nav {font-size:12px; padding-left:10px; padding-top:10px;}

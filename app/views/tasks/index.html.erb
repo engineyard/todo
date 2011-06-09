@@ -3,7 +3,7 @@
 		<% @count = 1%>
 		<% @lists.each do |list| %>
 		<li>
-			<a href="<%= '#' + 'tabs-' + @count.to_s %>"><%= list.name %></a>
+			<a href="<%= '#' + 'tabs-' + @count.to_s %>"><%= list.name.capitalize %></a>
 		</li>
 		<% @count += 1%>
 		<% end %>
