@@ -1,7 +1,14 @@
-body { background-color: #ededed; color: #333; margin:15px; padding:0; }
+body { background-color: #f8f8f8; color: #333; margin:0; padding:0; }
 
 h1,h2,h3,h4,h5,h6 { font-weight:normal; letter-spacing:-1px; margin:0; padding:0; margin-bottom:.7em;}
 ul, ol {margin:0; padding:0; list-style-position:inside;}
+
+#header {height:77px; background:#a00 url("/images/header.png") scroll repeat-x 0 0; position:relative; overflow:visible;}
+#header h1 {color:#FFF; position:absolute; left:100px; top:20px; font-size:18px;}
+#header h1 span.intro {display:block; font-weight:bold; margin-bottom:4px; font-size:22px;}
+#logo {height:81px; width:50px; background:url("/images/logo.png") scroll no-repeat 0 0; position:absolute; left:35px; top:10px;}
+#all { background:#f8f8f8 url("/images/clouds.png") scroll repeat-x 0 -18px; padding:35px;}
+
 
 #tabs {background:#fff;}
 #tabs .ui-tabs-selected a {color:#C00 !important;}
@@ -19,7 +26,7 @@ ul, ol {margin:0; padding:0; list-style-position:inside;}
 #tabs div.split-fields div.field {float:left; width:85%; margin:0; padding:0; }
 #tabs div.split-fields div.button {float:right; width:13%;}
 
-#tabs div.split-fields div.field input {width:100%; font-size:15px; padding:4px; border:2px solid #ddd; border-radius:2px; background:#ddd;}
+#tabs div.split-fields div.field input {width:100%; font-size:16px; padding:4px; border:2px solid #ddd; border-radius:2px; background:#ddd;}
 #tabs div.split-fields div.field input:focus {background:#FFF;}
 #tabs div.split-fields div.button input {border:2px solid #900; background:#fff; color:#c00; line-height:23px; cursor:pointer; text-align:center; width:98%;}
 #tabs div.split-fields div.button input:hover { color:#000; border-color:#500;}
