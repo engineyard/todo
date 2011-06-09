@@ -1,6 +1,6 @@
 
 body { background-color: #ededed; color: #333; }
-
+body { background-color: red; color: #333; }
 #new_task_area div.input{
 	display:inline;
 }
