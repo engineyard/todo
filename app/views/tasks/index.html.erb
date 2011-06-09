@@ -69,7 +69,10 @@
         		<% end %>
     		</ul>
 		<% end %>
-		<%= link_to 'Delete this list', list, :confirm => 'Are you sure?', :method => :delete %>
+		
+		<p class="delete-list">
+		    <%= link_to 'Delete this list', list, :confirm => 'Are you sure?', :method => :delete %>
+		</p>
 	</div>
 	<% @count += 1%>
 	

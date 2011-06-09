@@ -11,7 +11,7 @@ ul, ol {margin:0; padding:0; list-style-position:inside;}
 #logo {height:81px; width:50px; background:url("/images/logo.png") scroll no-repeat 0 0; position:absolute; left:35px; top:10px;}
 #all { background:#f8f8f8 url("/images/clouds.png") scroll repeat-x 0 -13px; padding:35px;}
 
-#tabs {background:#fff; margin-top:20px;}
+#tabs {background:#fff; margin-top:20px; box-shadow: 0px 2px 5px #ccc;}
 #tabs div.new-task {overflow:auto;}
 #tabs div.new-task form {overflow:auto;}
 #tabs div.split-fields {
@@ -30,8 +30,12 @@ ul, ol {margin:0; padding:0; list-style-position:inside;}
 #tabs div.split-fields div.button input {border:2px solid #80b2d3; background:#fff; color:#80b2d3; line-height:23px; cursor:pointer; text-align:center; width:98%;}
 #tabs div.split-fields div.button input:hover { color:#000; border-color:#500;}
 
+#tabs p.delete-list {margin:0; padding:0; overflow:auto; margin-top:18px;}
+#tabs p.delete-list a { display:block; line-height:24px; background:#bad5e8; color:#68A;  float:right; width:140px; text-decoration:none; border-radius:4px; border:1px solid #fff; padding:2px 4px; text-align:center;}
+#tabs p.delete-list a:hover {color:#333; border-color:#80b2d3;}
+
 ul.tasks {list-style-type:none; }
-ul.tasks li { margin-bottom:.4em; padding:5px 9px; font-size:14px; border-radius:4px; position:relative;
+ul.tasks li { margin-bottom:.4em; padding:8px 9px; font-size:14px; border-radius:4px; position:relative;
 
   background:#dedede;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dedede', endColorstr='#ccc');
@@ -39,11 +43,12 @@ ul.tasks li { margin-bottom:.4em; padding:5px 9px; font-size:14px; border-radius
   background: -moz-linear-gradient(top,  #dedede,  #ccc);
 }
 
-ul.tasks li p.delete-task {position:absolute; top:6px; right:6px; margin:0; padding:0; line-height:1em;}
+ul.tasks li p.delete-task {position:absolute; top:9px; right:9px; margin:0; padding:0; line-height:1em;}
 ul.tasks li p.delete-task a {text-decoration:none; font-weight:bold; display:block; padding:2px 4px; background:#bbb; color:#666; border-radius:2px;}
 ul.tasks li p.delete-task a:hover { color:#000; background:#aaa;}
 
 ul.finished-tasks li { color:#999;
+  padding:5px 9px;
   background: #eee;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#ddd');
   background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#ddd));
@@ -51,7 +56,10 @@ ul.finished-tasks li { color:#999;
 }
 
 ul.finished-tasks li p.delete-task a {background:#ccc; color:#aaa;}
-ul.pending-tasks { margin:15px 0; }
+ul.finished-tasks li p.delete-task {position:absolute; top:6px; right:6px; margin:0; padding:0; line-height:1em;}
+
+
+ul.pending-tasks { margin:20px 0; }
 ul.pending-tasks div.boolean { display:inline; }
 
 .hidden{ display:none; }
