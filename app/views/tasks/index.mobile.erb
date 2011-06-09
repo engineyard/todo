@@ -1,7 +1,7 @@
 
 
 	
-	<%= @count = 1 %>
+	<% @count = 1 %>
 	<% @lists.each do |list| %>
 	
 	<div id='tabs-<%= @count %>' class="tab">
@@ -23,7 +23,7 @@
 	    </div>
 
 	
-		<ul id='todo_list'>
+		<ul  class="tasks pending-tasks">
 			<% list.tasks.each do |task| %>
 
 				<% unless task.done %>
@@ -42,7 +42,7 @@
 			<% end %>
 		</ul>
 	
-		<h2>Finished</h2>
+	
 		<ul>
 			<% list.done_tasks.each do |task| %>
 				<li><%= task.name %> </li>
