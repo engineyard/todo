@@ -1,6 +1,6 @@
 
 body { background-color: #ededed; color: #333; }
-
+body { background-color: red; color: #333; }
 #new_task_area div.input{
 	display:inline;
 }
@@ -10,7 +10,9 @@ body { background-color: #ededed; color: #333; }
 
 ul{
 	list-style-type:none;
+	padding:none;
 }
 
 
-ul.tasks li {background:#dedede; margin-bottom:.25em; padding:5px 9px; font-size:14px; border-radius:4px; position:relative; width:100%;}
+ul.tasks li {background:#dedede; margin-bottom:.25em; padding:5px 9px; font-size:14px; border-radius:4px; position:relative;}
+ul.finished-tasks li {background:#eee; color:#999;}
