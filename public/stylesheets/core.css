@@ -4,26 +4,25 @@ h1,h2,h3,h4,h5,h6 { font-weight:normal; letter-spacing:-1px; margin:0; padding:0
 ul, ol {margin:0; padding:0; list-style-position:inside;}
 
 #tabs {background:#fff;}
+#tabs .ui-tabs-selected a {color:#C00 !important;}
 
 #tabs div.new-task {overflow:auto;}
 #tabs div.new-task form {overflow:auto;}
 #tabs div.split-fields {
   overflow:auto; padding:10px; border-radius:3px;
-  background:#444;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444', endColorstr='#666');
-  background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#666));
-  background: -moz-linear-gradient(top,  #444,  #666);
+  background:#C00;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C00', endColorstr='#900');
+  background: -webkit-gradient(linear, left top, left bottom, from(#C00), to(#900));
+  background: -moz-linear-gradient(top,  #C00,  #900);
 }
-
 
 #tabs div.split-fields div.field {float:left; width:85%; margin:0; padding:0; }
 #tabs div.split-fields div.button {float:right; width:13%;}
 
 #tabs div.split-fields div.field input {width:100%; font-size:15px; padding:4px; border:2px solid #ddd; border-radius:2px; background:#ddd;}
 #tabs div.split-fields div.field input:focus {background:#FFF;}
-#tabs div.split-fields div.button input {border:2px solid #333; background:#888; color:#ddd; line-height:21px; cursor:pointer; text-align:center; width:98%;}
-#tabs div.split-fields div.button input:hover {background:#aaa; color:#fff;}
-
+#tabs div.split-fields div.button input {border:2px solid #900; background:#fff; color:#c00; line-height:23px; cursor:pointer; text-align:center; width:98%;}
+#tabs div.split-fields div.button input:hover { color:#000; border-color:#500;}
 
 ul.tasks {list-style-type:none; }
 ul.tasks li { margin-bottom:.4em; padding:5px 9px; font-size:14px; border-radius:4px; position:relative;
@@ -34,11 +33,9 @@ ul.tasks li { margin-bottom:.4em; padding:5px 9px; font-size:14px; border-radius
   background: -moz-linear-gradient(top,  #dedede,  #ccc);
 }
 
-
 ul.tasks li p.delete-task {position:absolute; top:6px; right:6px; margin:0; padding:0; line-height:1em;}
 ul.tasks li p.delete-task a {text-decoration:none; font-weight:bold; display:block; padding:2px 4px; background:#bbb; color:#666; border-radius:2px;}
 ul.tasks li p.delete-task a:hover { color:#000; background:#aaa;}
-
 
 ul.finished-tasks li { color:#999;
   background: #eee;
