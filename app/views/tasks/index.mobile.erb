@@ -56,7 +56,17 @@
 	
 
     <div id="tabs-new-list">
-	    <%= render :partial => '/lists/form' %>
+	  	<%= simple_form_for(@task) do |f| %>
+
+		    <%= f.input :name %><br />
+
+		    <%= f.input :done , :as => :hidden,  :input_html => {:value => false }%>
+
+
+		    <%= f.button :submit %>
+
+		<% end %>
+	
 	</div>
 
 	
