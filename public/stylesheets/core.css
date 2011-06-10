@@ -1,5 +1,4 @@
 body { background-color: #f8f8f8; color: #333; margin:0; padding:0; }
-
 h1,h2,h3,h4,h5,h6 { font-weight:normal; letter-spacing:-1px; margin:0; padding:0; margin-bottom:.7em; color:#777;}
 ul, ol {margin:0; padding:0; list-style-position:inside;}
 
@@ -9,13 +8,12 @@ ul, ol {margin:0; padding:0; list-style-position:inside;}
 #header h1 span.intro span {font-weight:normal; font-size:.65em}
 #header p.sample {color:#fff; margin:0; padding:0; position:absolute; top:30px; right:30px;}
 #logo {height:81px; width:50px; background:url("/images/logo.png") scroll no-repeat 0 0; position:absolute; left:35px; top:10px;}
-#all { background:#f8f8f8 url("/images/clouds.png") scroll repeat-x 0 -13px; padding:35px;}
+#content { background:#f8f8f8 url("/images/clouds.png") scroll repeat-x 0 -13px; padding:35px;}
 
 #tabs {background:#fff; margin-top:20px; box-shadow: 0px 2px 5px #ccc;}
 #tabs div.new-task {overflow:auto;}
 #tabs div.new-task form {overflow:auto;}
-#tabs div.split-fields {
-  overflow:auto; padding:10px; border-radius:3px;
+#tabs div.split-fields { overflow:auto; padding:10px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
   background:#bad5e8;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bad5e8', endColorstr='#80b2d3');
   background: -webkit-gradient(linear, left top, left bottom, from(#bad5e8), to(#80b2d3));
@@ -25,17 +23,17 @@ ul, ol {margin:0; padding:0; list-style-position:inside;}
 #tabs div.split-fields div.field {float:left; width:85%; margin:0; padding:0; }
 #tabs div.split-fields div.button {float:right; width:13%;}
 
-#tabs div.split-fields div.field input {width:100%; font-size:16px; padding:4px; border:2px solid #eee; border-radius:2px; background:#eee;}
+#tabs div.split-fields div.field input {width:100%; font-size:16px; padding:4px; border:2px solid #eee; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; background:#eee;}
 #tabs div.split-fields div.field input:focus {background:#FFF;}
 #tabs div.split-fields div.button input {border:2px solid #80b2d3; background:#fff; color:#80b2d3; line-height:23px; cursor:pointer; text-align:center; width:98%;}
 #tabs div.split-fields div.button input:hover { color:#000; border-color:#500;}
 
 #tabs p.delete-list {margin:0; padding:0; overflow:auto; margin-top:18px;}
-#tabs p.delete-list a { display:block; line-height:24px; background:#bad5e8; color:#68A;  float:right; width:140px; text-decoration:none; border-radius:4px; border:1px solid #fff; padding:2px 4px; text-align:center;}
+#tabs p.delete-list a { display:block; line-height:24px; background:#bad5e8; color:#68A;  float:right; width:140px; text-decoration:none; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; border:1px solid #fff; padding:2px 4px; text-align:center;}
 #tabs p.delete-list a:hover {color:#333; border-color:#80b2d3;}
 
 ul.tasks {list-style-type:none; }
-ul.tasks li { margin-bottom:.4em; padding:8px 9px; font-size:14px; border-radius:4px; position:relative;
+ul.tasks li { margin-bottom:.4em; padding:8px 9px; font-size:14px; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; position:relative;
 
   background:#dedede;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dedede', endColorstr='#ccc');
@@ -44,7 +42,7 @@ ul.tasks li { margin-bottom:.4em; padding:8px 9px; font-size:14px; border-radius
 }
 
 ul.tasks li p.delete-task {position:absolute; top:9px; right:9px; margin:0; padding:0; line-height:1em;}
-ul.tasks li p.delete-task a {text-decoration:none; font-weight:bold; display:block; padding:2px 4px; background:#bbb; color:#666; border-radius:2px;}
+ul.tasks li p.delete-task a {text-decoration:none; display:block; padding:2px 4px; background:#bbb; color:#666; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;}
 ul.tasks li p.delete-task a:hover { color:#000; background:#aaa;}
 
 ul.finished-tasks li { 
