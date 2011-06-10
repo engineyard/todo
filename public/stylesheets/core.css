@@ -1,6 +1,9 @@
-body { background-color: #f8f8f8; color: #333; margin:0; padding:0; }
+body { background-color: #f8f8f8; color: #333; margin:0; padding:0; font-family:"Lucida Grande", helvetica, arial, sans-serif; font-size: 13px; line-height: 18px; }
+
 h1,h2,h3,h4,h5,h6 { font-weight:normal; letter-spacing:-1px; margin:0; padding:0; margin-bottom:.7em; color:#777;}
 ul, ol {margin:0; padding:0; list-style-position:inside;}
+h2 {font-size:18px;}
+
 
 #header {height:77px; background:#a00 url("/images/header.png") scroll repeat-x 0 0; position:relative; overflow:visible;}
 #header h1 {color:#FFF; position:absolute; left:100px; top:20px; font-size:18px;}
@@ -15,9 +18,9 @@ ul, ol {margin:0; padding:0; list-style-position:inside;}
 #tabs div.new-task form {overflow:auto;}
 #tabs div.split-fields { overflow:auto; padding:10px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
   background:#bad5e8;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bad5e8', endColorstr='#80b2d3');
   background: -webkit-gradient(linear, left top, left bottom, from(#bad5e8), to(#80b2d3));
   background: -moz-linear-gradient(top,  #bad5e8,  #80b2d3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bad5e8', endColorstr='#80b2d3');
 }
 
 #tabs div.split-fields div.field {float:left; width:85%; margin:0; padding:0; }
@@ -29,35 +32,34 @@ ul, ol {margin:0; padding:0; list-style-position:inside;}
 #tabs div.split-fields div.button input:hover { color:#000; border-color:#500;}
 
 #tabs p.delete-list {margin:0; padding:0; overflow:auto; margin-top:18px;}
-#tabs p.delete-list a { display:block; line-height:24px; background:#bad5e8; color:#68A;  float:right; width:140px; text-decoration:none; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; border:1px solid #fff; padding:2px 4px; text-align:center;}
-#tabs p.delete-list a:hover {color:#333; border-color:#80b2d3;}
+#tabs p.delete-list a { display:block; line-height:24px; background:#eee; color:#aaa;  float:right; width:140px; text-decoration:none; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; padding:2px 4px; text-align:center;}
+#tabs p.delete-list a:hover {color:#FFF; background:#C00; }
 
 ul.tasks {list-style-type:none; }
 ul.tasks li { margin-bottom:.4em; padding:8px 9px; font-size:14px; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; position:relative;
 
   background:#dedede;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dedede', endColorstr='#ccc');
-  background: -webkit-gradient(linear, left top, left bottom, from(#dedede), to(#ccc));
-  background: -moz-linear-gradient(top,  #dedede,  #ccc);
+  background: -webkit-gradient(linear, left top, left bottom, from(#bad5e8), to(#c9e1f2));
+  background: -moz-linear-gradient(top,  ##bad5e8,  #c9e1f2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bad5e8', endColorstr='##c9e1f2');
 }
 
 ul.tasks li p.delete-task {position:absolute; top:9px; right:9px; margin:0; padding:0; line-height:1em;}
-ul.tasks li p.delete-task a {text-decoration:none; display:block; padding:2px 4px; background:#bbb; color:#666; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;}
-ul.tasks li p.delete-task a:hover { color:#000; background:#aaa;}
+ul.tasks li p.delete-task a {text-decoration:none; display:block; padding:2px 4px; background:#73a0bc; color:#FFF; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;}
+ul.tasks li p.delete-task a:hover { background:#8ab5d1;}
 
-ul.finished-tasks li { 
-  font-size:12px;
-  color:#999;
-  padding:5px 9px;
-  background: #eee;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#ddd');
-  background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#ddd));
-  background: -moz-linear-gradient(top,  #efefef,  #ddd);
-}
 
 ul.finished-tasks li p.delete-task a {background:#ccc; color:#aaa;}
 ul.finished-tasks li p.delete-task {position:absolute; top:6px; right:6px; margin:0; padding:0; line-height:1em;}
-
+ul.finished-tasks li { 
+  font-size:11px;
+  color:#999;
+  padding:5px 9px;
+  background: #eee;
+  background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#eee));
+  background: -moz-linear-gradient(top,  #efefef,  #eee);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#eee');
+}
 
 ul.pending-tasks { margin:20px 0; }
 ul.pending-tasks div.boolean { display:inline; }
@@ -68,4 +70,4 @@ ul.pending-tasks div.boolean { display:inline; }
 .ui-widget-header {border-color:#ccc !important;}
 #tabs div.tab {padding:14px !important;}
 #tabs .ui-tabs-selected a {color:#80b2d3 !important;}
-#tabs .ui-tabs-nav {font-size:12px; padding-left:10px; padding-top:10px;}
+#tabs .ui-tabs-nav {font-size:11px; padding-left:10px; padding-top:10px;}
