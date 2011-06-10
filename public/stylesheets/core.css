@@ -4,7 +4,6 @@ h1,h2,h3,h4,h5,h6 { font-weight:normal; letter-spacing:-1px; margin:0; padding:0
 ul, ol {margin:0; padding:0; list-style-position:inside;}
 h2 {font-size:18px;}
 
-
 #header {height:77px; background:#a00 url("/images/header.png") scroll repeat-x 0 0; position:relative; overflow:visible;}
 #header h1 {color:#FFF; position:absolute; left:100px; top:20px; font-size:18px;}
 #header h1 span.intro {display:block; font-weight:bold; margin-bottom:4px; font-size:22px;}
@@ -48,8 +47,7 @@ ul.tasks li p.delete-task {position:absolute; top:9px; right:9px; margin:0; padd
 ul.tasks li p.delete-task a {text-decoration:none; display:block; padding:2px 4px; background:#73a0bc; color:#FFF; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;}
 ul.tasks li p.delete-task a:hover { background:#8ab5d1;}
 
-
-ul.finished-tasks li p.delete-task a {background:#ccc; color:#aaa;}
+ul.finished-tasks li p.delete-task a {background:#d5d5d5; color:#aaa;}
 ul.finished-tasks li p.delete-task a:hover {background:#bbb; color:#666;}
 ul.finished-tasks li p.delete-task {position:absolute; top:6px; right:6px; margin:0; padding:0; line-height:1em;}
 ul.finished-tasks li { 
@@ -68,7 +66,7 @@ ul.pending-tasks div.boolean { display:inline; }
 .hidden{ display:none; }
 
 /* Overrides */
-.ui-widget-header {border-color:#ccc !important;}
+#tabs .ui-widget-header {border-color:#ccc !important;}
 #tabs div.tab {padding:14px !important;}
 #tabs .ui-tabs-selected a {color:#000 !important; font-weight:bold;}
-#tabs .ui-tabs-nav {font-size:11px; padding-left:10px; padding-top:10px;}
+#tabs .ui-tabs-nav {font-size:11px; padding-left:10px; padding-top:10px; -webkit-border-radius:0; border-radius:0;}
