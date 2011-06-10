@@ -2,14 +2,12 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(params[:list])
-
-    respond_to do |format|
-      if @list.save
-        format.html { redirect_to(tasks_url(:list => @list.id), :notice => 'List was successfully created.') }
-      else
-        format.html { render :action => "new" }
-      end
+    if @list.save
+        flash[:notice] = "Your list was created"
+    else
+        flash[:alert] = "There was an error creating your list."
     end
+    redirect_to(tasks_url(:list => @list.id))
   end
 
   def destroy

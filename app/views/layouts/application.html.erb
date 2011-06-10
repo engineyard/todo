@@ -20,6 +20,9 @@
             <p class="sample">Sample Deployment Application</p>
         </div>
         <div id="content">
+            <% if alerted = alert %>
+                <p id="alert"><%= alerted %></p>
+            <% end %>
             <%= yield %>
         </div>
     </div>

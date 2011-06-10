@@ -2,10 +2,10 @@ class TasksController < ApplicationController
 
 
   def index
-    @todo = Task.where(:done => false)
-    @task = Task.new
-    @lists = List.all
-    @list = List.new
+    @todo   = Task.where(:done => false)
+    @task   = Task.new
+    @lists  = List.all
+    @list   = List.new
     
     respond_to do |format|
       format.html
@@ -15,13 +15,12 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params[:task])
-    respond_to do |format|
-      if @task.save
-        format.html { redirect_to(tasks_url(:list => @task.list.id), :notice => 'Task was successfully created.') }
-      else
-        format.html { render :action => "new" }
-      end
+    if @task.save
+        flash[:notice] = "Your task was created."
+    else
+        flash[:alert] = "There was an error creating your task."
     end
+    redirect_to(tasks_url(:list => params[:task][:list_id]))
   end
   
 
