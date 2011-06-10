@@ -27,7 +27,7 @@ h2 {font-size:18px;}
 
 #tabs div.split-fields div.field input {width:100%; font-size:16px; padding:4px; border:2px solid #def0fc; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; background:#def0fc;}
 #tabs div.split-fields div.field input:focus {background:#FFF;}
-#tabs div.split-fields div.button input {border:2px solid #80b2d3; border-radius:4px; background:#fff; color:#80b2d3; line-height:23px; cursor:pointer; text-align:center; width:98%;}
+#tabs div.split-fields div.button input {border:2px solid #80b2d3; border-radius:4px; background:#fff; color:#80b2d3; line-height:23px; height:34px; cursor:pointer; text-align:center; width:98%;}
 #tabs div.split-fields div.button input:hover { color:#000; border-color:#500;}
 
 #tabs p.delete-list {margin:0; padding:0; overflow:auto; margin-top:18px; font-size:11px;}
