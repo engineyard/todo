@@ -13,7 +13,7 @@ h2 {font-size:18px;}
 #logo {height:81px; width:50px; background:url("/images/logo.png") scroll no-repeat 0 0; position:absolute; left:35px; top:10px;}
 #content { background:#f8f8f8 url("/images/clouds.png") scroll repeat-x 0 -13px; padding:35px;}
 
-#tabs {background:#fff; margin-top:20px; box-shadow: 0px 2px 5px #ccc;}
+#tabs {background:#fff; margin-top:20px; box-shadow: 0px 2px 5px #ccc; -moz-box-shadow: 0px 2px 5px #ccc; max-width:1200px;}
 #tabs div.new-task {overflow:auto;}
 #tabs div.new-task form {overflow:auto;}
 #tabs div.split-fields { overflow:auto; padding:10px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
@@ -23,16 +23,16 @@ h2 {font-size:18px;}
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bad5e8', endColorstr='#80b2d3');
 }
 
-#tabs div.split-fields div.field {float:left; width:85%; margin:0; padding:0; }
-#tabs div.split-fields div.button {float:right; width:13%;}
+#tabs div.split-fields div.field {float:left; width:80%; margin:0; padding:0; }
+#tabs div.split-fields div.button {float:right; width:18%;}
 
 #tabs div.split-fields div.field input {width:100%; font-size:16px; padding:4px; border:2px solid #eee; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; background:#eee;}
 #tabs div.split-fields div.field input:focus {background:#FFF;}
 #tabs div.split-fields div.button input {border:2px solid #80b2d3; background:#fff; color:#80b2d3; line-height:23px; cursor:pointer; text-align:center; width:98%;}
 #tabs div.split-fields div.button input:hover { color:#000; border-color:#500;}
 
-#tabs p.delete-list {margin:0; padding:0; overflow:auto; margin-top:18px;}
-#tabs p.delete-list a { display:block; line-height:24px; background:#eee; color:#aaa;  float:right; width:140px; text-decoration:none; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; padding:2px 4px; text-align:center;}
+#tabs p.delete-list {margin:0; padding:0; overflow:auto; margin-top:18px; font-size:11px;}
+#tabs p.delete-list a { box-shadow:inset 0 0 4px #999; -moz-box-shadow: 0px 2px 5px #ccc; display:block; line-height:20px; background:#eee; color:#aaa;  float:right; width:100px; text-decoration:none; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; padding:2px 4px; text-align:center;}
 #tabs p.delete-list a:hover {color:#FFF; background:#C00; }
 
 ul.tasks {list-style-type:none; }
@@ -50,6 +50,7 @@ ul.tasks li p.delete-task a:hover { background:#8ab5d1;}
 
 
 ul.finished-tasks li p.delete-task a {background:#ccc; color:#aaa;}
+ul.finished-tasks li p.delete-task a:hover {background:#bbb; color:#666;}
 ul.finished-tasks li p.delete-task {position:absolute; top:6px; right:6px; margin:0; padding:0; line-height:1em;}
 ul.finished-tasks li { 
   font-size:11px;
@@ -69,5 +70,5 @@ ul.pending-tasks div.boolean { display:inline; }
 /* Overrides */
 .ui-widget-header {border-color:#ccc !important;}
 #tabs div.tab {padding:14px !important;}
-#tabs .ui-tabs-selected a {color:#80b2d3 !important;}
+#tabs .ui-tabs-selected a {color:#000 !important; font-weight:bold;}
 #tabs .ui-tabs-nav {font-size:11px; padding-left:10px; padding-top:10px;}
