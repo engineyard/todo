@@ -10,7 +10,7 @@ h2 {font-size:18px;}
 #header h1 span.intro span {font-weight:normal; font-size:.65em}
 #header p.sample {color:#fff; margin:0; padding:0; position:absolute; top:30px; right:30px;}
 #logo {height:81px; width:50px; background:url("/images/logo.png") scroll no-repeat 0 0; position:absolute; left:35px; top:10px;}
-#content { background:#f8f8f8 url("/images/clouds.png") scroll repeat-x 0 -13px; padding:35px;}
+#content { background:#f8f8f8 url("/images/clouds.png") scroll repeat-x 0 -5px; padding:50px 35px;}
 
 #tabs {background:#fff; margin-top:20px; box-shadow: 0px 2px 5px #ccc; -moz-box-shadow: 0px 2px 5px #ccc; max-width:1200px;}
 #tabs div.new-task {overflow:auto;}
@@ -27,11 +27,11 @@ h2 {font-size:18px;}
 
 #tabs div.split-fields div.field input {width:100%; font-size:16px; padding:4px; border:2px solid #eee; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; background:#eee;}
 #tabs div.split-fields div.field input:focus {background:#FFF;}
-#tabs div.split-fields div.button input {border:2px solid #80b2d3; background:#fff; color:#80b2d3; line-height:23px; cursor:pointer; text-align:center; width:98%;}
+#tabs div.split-fields div.button input {border:2px solid #80b2d3; border-radius:4px; background:#fff; color:#80b2d3; line-height:23px; cursor:pointer; text-align:center; width:98%;}
 #tabs div.split-fields div.button input:hover { color:#000; border-color:#500;}
 
 #tabs p.delete-list {margin:0; padding:0; overflow:auto; margin-top:18px; font-size:11px;}
-#tabs p.delete-list a { box-shadow:inset 0 0 4px #999; -moz-box-shadow: 0px 2px 5px #ccc; display:block; line-height:20px; background:#eee; color:#aaa;  float:right; width:100px; text-decoration:none; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; padding:2px 4px; text-align:center;}
+#tabs p.delete-list a { box-shadow:inset 0 0 4px #bbb; display:block; line-height:20px; background:#f3f3f3; color:#aaa;  float:right; width:100px; text-decoration:none; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; padding:2px 4px; text-align:center;}
 #tabs p.delete-list a:hover {color:#FFF; background:#C00; }
 
 ul.tasks {list-style-type:none; }
@@ -55,9 +55,9 @@ ul.finished-tasks li {
   color:#999;
   padding:5px 9px;
   background: #eee;
-  background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#eee));
-  background: -moz-linear-gradient(top,  #efefef,  #eee);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#eee');
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#eee));
+  background: -moz-linear-gradient(top,  #f5f5f5,  #eee);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eee');
 }
 
 ul.pending-tasks { margin:20px 0; }
