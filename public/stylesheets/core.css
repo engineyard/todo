@@ -39,7 +39,7 @@ ul.tasks li { margin-bottom:.4em; padding:8px 9px; font-size:14px; border-radius
 
   background:#dedede;
   background: -webkit-gradient(linear, left top, left bottom, from(#bad5e8), to(#c9e1f2));
-  background: -moz-linear-gradient(top,  ##bad5e8,  #c9e1f2);
+  background: -moz-linear-gradient(top,  #bad5e8,  #c9e1f2);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bad5e8', endColorstr='##c9e1f2');
 }
 
