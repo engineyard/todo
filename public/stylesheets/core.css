@@ -11,7 +11,8 @@ h2 {font-size:18px;}
 #header p.sample {color:#fff; margin:0; padding:0; position:absolute; top:30px; right:30px;}
 #logo {height:81px; width:50px; background:url("/images/logo.png") scroll no-repeat 0 0; position:absolute; left:35px; top:10px;}
 #logo a {display:block; width:50px; height:80px; text-indent:-9000px;}
-#content { background:#f8f8f8 url("/images/clouds.png") scroll repeat-x 0 -5px; padding:50px 35px;}
+#content { background:#f8f8f8 url("/images/clouds.png") scroll repeat-x 0 -5px; padding:50px 35px 0 35px;}
+#foot {padding:0 35px; color:#888;}
 
 #tabs {background:#fff; margin-top:20px; box-shadow: 0px 2px 5px #ccc; -moz-box-shadow: 0px 2px 5px #ccc; max-width:1200px;}
 #tabs div.new-task {overflow:auto;}
