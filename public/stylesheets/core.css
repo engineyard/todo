@@ -69,6 +69,9 @@ ul.pending-tasks div.boolean { display:inline; }
 
 p#alert {background:#C00; margin:0; padding:6px 10px; color:#FFF; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; }
 
+.copyright {font-size:11px; line-height:1.3em;}
+.copyright p { width:300px; float:right;}
+.copyright a {color:#369;}
 
 /* Overrides */
 #tabs .ui-widget-header {border-color:#ccc !important;}
