@@ -1,10 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.0.9'
 
+gem 'simple_form'
+gem 'jquery-rails'
 
 platform :ruby do
   gem "mysql2", "~> 0.2.7"
+  gem "unicorn"
 end
 
 platforms :jruby do
@@ -15,8 +18,7 @@ platforms :jruby do
   gem 'trinidad'
 end
 
-gem 'simple_form'
-gem 'jquery-rails'
+
 
 
 # Bundle gems for the local environment. Make sure to
