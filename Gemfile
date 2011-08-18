@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
-gem "rack", "~> 1.3.2"
+gem 'rails', '3.0.9'
 
 gem 'simple_form'
 gem 'jquery-rails'
