@@ -6,8 +6,9 @@ gem 'simple_form'
 gem 'jquery-rails'
 
 platform :ruby do
-  gem "mysql2", "~> 0.2.7"
-  gem "unicorn"
+  gem 'mysql2', '~> 0.2.7'
+  gem 'sqlite3' 
+  gem 'unicorn'
 end
 
 platforms :jruby do
@@ -25,5 +26,5 @@ end
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-	gem 'sqlite3' 
+
 end
