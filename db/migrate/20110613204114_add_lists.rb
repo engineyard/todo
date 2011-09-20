@@ -4,6 +4,10 @@ class AddLists < ActiveRecord::Migration
     has_many :tasks
   end
 
+  class Task < ActiveRecord::Base
+    belongs_to :list
+  end
+  
 
   def self.up
   
