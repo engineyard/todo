@@ -1,4 +1,10 @@
 class AddLists < ActiveRecord::Migration
+  
+  class List < ActiveRecord::Base
+    has_many :tasks
+  end
+
+
   def self.up
   
     list = List.create(:name => 'Welcome')
