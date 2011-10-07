@@ -1,21 +1,20 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.9'
+gem 'rails', '3.1.0'
 
 gem 'simple_form', '1.5.1'
 gem 'jquery-rails', '1.0.14'
 
 platform :ruby do
-  gem 'mysql2', '~> 0.2.7'
-  gem 'sqlite3' 
+  gem 'mysql2', '~> 0.3', :group => :production
+  gem 'sqlite3', :groups => [:development, :test] 
   gem 'unicorn'
 end
 
 platforms :jruby do
-  gem 'activerecord-jdbc-adapter'
+  gem 'activerecord-jdbcmysql-adapter', :group => :production
+  gem 'activerecord-jdbcsqlite3-adapter', :groups => [:development, :test]
   gem 'jruby-openssl'
-  gem 'jdbc-mysql', :require => false
-  gem 'jdbc-sqlite3', :require => false
   gem 'trinidad'
 end
 
