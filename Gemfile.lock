@@ -79,6 +79,8 @@ GEM
       activesupport (= 3.1.0)
       bundler (~> 1.0)
       railties (= 3.1.0)
+    rails_autolink (1.0.2)
+      rails (~> 3.1.0.a)
     railties (3.1.0)
       actionpack (= 3.1.0)
       activesupport (= 3.1.0)
@@ -123,6 +125,7 @@ DEPENDENCIES
   jruby-openssl
   mysql2 (~> 0.3)
   rails (= 3.1.0)
+  rails_autolink
   simple_form (= 1.5.1)
   sqlite3
   trinidad
