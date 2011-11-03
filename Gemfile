@@ -2,12 +2,14 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 
+gem 'mongoid', '~> 2.2'
+gem 'bson_ext', '~> 1.4'
+
 gem 'simple_form', '1.5.1'
 gem 'jquery-rails', '1.0.14'
 
 platform :ruby do
-  gem 'mysql2', '~> 0.2.7'
-  gem 'sqlite3' 
+  gem 'mysql2', '~> 0.2.7' 
   gem 'unicorn'
 end
 
@@ -20,11 +22,9 @@ platforms :jruby do
 end
 
 
-
-
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-
+  gem 'sqlite3'
 end
