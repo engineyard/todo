@@ -4,6 +4,10 @@ Listr::Application.routes.draw do
     resources :tasks, :except => [:new, :edit, :show]
   end
 
+  match 'cleanup' => 'cleanup#index', :as => :cleanup
+  match 'cleanup/run' => 'cleanup#run', :as => :run_cleanup
+  match 'cleanup/setup' => 'cleanup#setup', :as => :setup_cleanup
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,11 @@
+<p>Getting things done is great.</p>
+
+<p>But when they don't get done, they just sit there on your list and make you feel icky.</p>
+
+<p>So let's just expire old items!</p>
+
+<% if @setup %>
+  <p>Item expiration cron is setup!</p>
+<% else %>
+  <p>Item expiration cron is not setup: <%=link_to "Setup now!", setup_cleanup_url %></p>
+<% end %>

@@ -1,0 +1,5 @@
+---
+chronatog:
+  auth_username: foo
+  auth_password: bar
+  service_url: "in-memory"

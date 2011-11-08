@@ -32,8 +32,11 @@ GEM
     arel (2.0.10)
     bouncy-castle-java (1.5.0146.1)
     builder (2.1.2)
+    chronatog-client (0.2.0)
+      rack-client
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    ey_config (0.0.1)
     i18n (0.5.0)
     jdbc-mysql (5.1.13)
     jdbc-sqlite3 (3.7.2)
@@ -43,6 +46,8 @@ GEM
     jruby-openssl (0.7.4)
       bouncy-castle-java
     jruby-rack (1.0.10)
+    json (1.6.1)
+    json (1.6.1-java)
     kgio (2.6.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
@@ -54,6 +59,8 @@ GEM
     pg (0.11.0)
     polyglot (0.3.2)
     rack (1.2.4)
+    rack-client (0.4.0)
+      rack (>= 1.0.0)
     rack-mount (0.6.14)
       rack (>= 1.0.0)
     rack-test (0.5.7)
@@ -99,10 +106,13 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-jdbc-adapter
+  chronatog-client
+  ey_config
   jdbc-mysql
   jdbc-sqlite3
   jquery-rails (= 1.0.14)
   jruby-openssl
+  json
   mysql2 (~> 0.2.7)
   pg
   rails (= 3.0.9)
