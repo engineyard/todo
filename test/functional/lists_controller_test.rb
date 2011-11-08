@@ -5,38 +5,12 @@ class ListsControllerTest < ActionController::TestCase
     @list = lists(:one)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:lists)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
   test "should create list" do
     assert_difference('List.count') do
-      post :create, :list => @list.attributes
+      post :create, :list => {:name => "NewList"}
     end
 
-    assert_redirected_to list_path(assigns(:list))
-  end
-
-  test "should show list" do
-    get :show, :id => @list.to_param
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, :id => @list.to_param
-    assert_response :success
-  end
-
-  test "should update list" do
-    put :update, :id => @list.to_param, :list => @list.attributes
-    assert_redirected_to list_path(assigns(:list))
+    assert_redirected_to list_tasks_path(assigns(:list))
   end
 
   test "should destroy list" do
@@ -44,6 +18,6 @@ class ListsControllerTest < ActionController::TestCase
       delete :destroy, :id => @list.to_param
     end
 
-    assert_redirected_to lists_path
+    assert_redirected_to root_path
   end
 end
