@@ -14,22 +14,24 @@ class TasksController < ApplicationController
 
 
   def create
-    @task = Task.new(params[:task])
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.new(params[:task])
     if @task.save
         flash[:notice] = "Your task was created."
     else
         flash[:alert] = "There was an error creating your task."
     end
-    redirect_to(tasks_url(:list => params[:task][:list_id]))
+    redirect_to(list_tasks_url(@list))
   end
   
 
   def update
-    @task = Task.find(params[:id])
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
 
     respond_to do |format|
       if @task.update_attributes(params[:task])
-        format.html { redirect_to( tasks_url(:list => @task.list.id), :notice => 'Task was successfully updated.') }
+        format.html { redirect_to( list_tasks_url(@list), :notice => 'Task was successfully updated.') }
       else
         format.html { render :action => "edit" }
       end
@@ -42,7 +44,7 @@ class TasksController < ApplicationController
     @task.destroy
 
     respond_to do |format|
-      format.html { redirect_to(tasks_url(:list => @task.list_id)) }
+      format.html { redirect_to(list_tasks_url(@list)) }
     end
   end
   

@@ -7,7 +7,7 @@ class ListsController < ApplicationController
     else
         flash[:alert] = "There was an error creating your list."
     end
-    redirect_to(tasks_url(:list => @list.id))
+    redirect_to(list_tasks_url(@list))
   end
 
   def destroy
@@ -15,7 +15,7 @@ class ListsController < ApplicationController
     @list.destroy
 
     respond_to do |format|
-      format.html { redirect_to(tasks_url) }
+      format.html { redirect_to(root_url) }
     end
   end
 end
