@@ -19,7 +19,7 @@
 	<div id='tabs-<%= @count %>' class="tab">
 	
 	    <div class="new-task">
-    	    <%= simple_form_for(@task) do |f| %>
+    	    <%= simple_form_for(@task, :url => list_tasks_url(list)) do |f| %>
 
                 <%= f.input :done , :as => :hidden,  :input_html => {:value => false }%>
     		    <%= f.input :list_id , :as => :hidden,   :input_html => {:value => list.id }%>
@@ -40,14 +40,14 @@
 			<% list.tasks.each do |task| %>
 
 				<% unless task.done %>
-					<%= simple_form_for(task) do |f| %>
+					<%= simple_form_for(task, :url => list_task_url(list, task)) do |f| %>
 
 			 		<li> 
 					    <%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
 					    <%= f.button :submit ,  :class => 'hidden'   %>
-					    <%= auto_link( h(task.name) ) %>
+					    <%= raw auto_link( h(task.name), :html => { :target => '_blank' }) %>
 					    <p class="delete-task">
-					        <%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
+					        <%= link_to 'X', list_task_url(list, task), :confirm => 'Are you sure?', :method => :delete %>
 					    </p>
 			  		</li>
 		
@@ -61,9 +61,9 @@
     		<ul class="tasks finished-tasks">
     		    <% list.done_tasks.each do |task| %>
         		<li class="finished">
-        		    <%= auto_link( h(task.name) ) %>
+        		    <%= raw auto_link( h(task.name), :html => { :target => '_blank' }) %>
         		    <p class="delete-task">
-    			        <%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete %>
+    			        <%= link_to 'X', list_task_url(list, task), :confirm => 'Are you sure?', :method => :delete %>
     			    </p>
         		</li>
         		<% end %>
@@ -88,7 +88,7 @@
 </div>
 
 
-<% if listid = params[:list] %>
+<% if listid = params[:list_id] %>
     <% prevlist = List.find listid %>
     <% tabindex = @lists.index(prevlist) %>
 <% end %> 
@@ -101,7 +101,7 @@
 	
 	$(function() {
 	    var opts = {};
-	    <% if params[:list] %>
+	    <% if params[:list_id] %>
 	        opts.selected = <%= tabindex %>
 	    <% end %>
 		$( "#tabs" ).tabs(opts);

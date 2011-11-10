@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -x
+set -e
+export LANG=en_US.UTF-8
+
+db_host=$DB_HOST
+db_user=$USER
+db_pass=$DB_PASS
+db_name=ensemble_ci_$$
+internal_key="/home/$USER/.ssh/internal"
+
+db_create_command="createdb -U postgres -h localhost -O $db_user $db_name"
+db_drop_command="dropdb -U postgres -h localhost $db_name"
+db_remote_command="ssh -F /dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no -i $internal_key root@$db_host"
+
+if [[ $db_host == "localhost" ]]; then
+    sudo -u postgres $db_create_command
+    trap "echo 'database cleanup'; sudo -u postgres ${db_drop_command}" EXIT
+else
+    $db_remote_command $db_create_command
+    trap "echo 'database cleanup'; ${db_remote_command} ${db_drop_command}" EXIT
+fi
+
+test -d config && {
+    cat > config/database.yml <<EOF
+test:
+  adapter: postgresql
+  user: $db_user
+  host: $db_host
+  database: $db_name
+  password: $db_pass
+EOF
+    }
+
+source use_ruby.sh
+use_ruby 1.9.2
+
+test -f Gemfile
+gem install bundler --no-rdoc --no-ri
+bundle
+
+bundle exec rake db:migrate
+time bundle exec rake --trace
+
