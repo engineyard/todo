@@ -125,10 +125,16 @@ DEPENDENCIES
   jdbc-sqlite3
   jquery-rails (= 1.0.14)
   jruby-openssl
+<<<<<<< HEAD
   mysql2 (~> 0.2.7)
   pg (~> 0.13.2)
   puma
   rails (= 3.0.9)
+=======
+  mysql2 (~> 0.3.7)
+  rails (= 3.2.0.rc1)!
+  rails_autolink
+>>>>>>> Testing mysql2
   simple_form (= 1.5.1)
   sqlite3
   thor
