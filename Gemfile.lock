@@ -50,6 +50,9 @@ GEM
   remote: http://rubygems.org/
   specs:
     activerecord-jdbc-adapter (1.2.0)
+    activerecord-jdbcpostgresql-adapter (1.2.0)
+      activerecord-jdbc-adapter (~> 1.2.0)
+      jdbc-postgres (~> 9.0.0)
     arel (3.0.0.rc1)
     bouncy-castle-java (1.5.0146.1)
     builder (3.0.0)
@@ -118,6 +121,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-jdbc-adapter
+  activerecord-jdbcpostgresql-adapter
   jdbc-mysql
   jdbc-postgres
   jdbc-sqlite3
