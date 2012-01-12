@@ -127,6 +127,7 @@ DEPENDENCIES
   jruby-openssl
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   mysql2 (~> 0.2.7)
   pg (~> 0.13.2)
   puma
@@ -135,6 +136,9 @@ DEPENDENCIES
 =======
 >>>>>>> Testing mysql2 gem again.
   mysql2 (~> 0.3.7)
+=======
+  mysql2 (~> 0.2.7)
+>>>>>>> Bumping mysql2 gem down to see if will work for 1.8.7 and 1.9.2
   rails (= 3.2.0.rc1)!
   rails_autolink
 >>>>>>> Testing mysql2
