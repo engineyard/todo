@@ -16,6 +16,7 @@ end
 
 platforms :jruby do
   gem 'activerecord-jdbc-adapter'
+  gem 'activerecord-jdbcpostgresql-adapter'
   gem 'jruby-openssl'
   gem 'jdbc-mysql', :require => false
   gem 'jdbc-sqlite3', :require => false
