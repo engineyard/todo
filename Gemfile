@@ -17,7 +17,7 @@ platforms :jruby do
   gem 'jruby-openssl'
   gem 'jdbc-mysql', :require => false
   gem 'jdbc-sqlite3', :require => false
-  gem 'jdbc-postgresql', :require => false
+  gem 'jdbc-postgres', :require => false
   gem 'trinidad'
 end
 
