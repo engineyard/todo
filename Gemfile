@@ -19,6 +19,7 @@ platforms :jruby do
   gem 'jdbc-sqlite3', :require => false
   gem 'jdbc-postgres', :require => false
   gem 'trinidad'
+  gem 'thor'
 end
 
 

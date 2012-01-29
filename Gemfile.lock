@@ -110,5 +110,6 @@ DEPENDENCIES
   rails (= 3.0.9)
   simple_form (= 1.5.1)
   sqlite3
+  thor
   trinidad
   unicorn
