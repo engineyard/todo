@@ -22,7 +22,8 @@ platforms :jruby do
   gem 'thor'
 end
 
-
+gem "faker"
+gem "resque-rails"
 
 
 # Bundle gems for the local environment. Make sure to
