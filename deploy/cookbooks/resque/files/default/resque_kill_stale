@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+require "syslog"
+require "fileutils"
+
+GRACE = 300
+
+unless ARGV.size == 1
+  $stderr.puts "Usage: #{$0} ttl_files_directory"
+  exit 1
+end
+
+ttl_files_directory = ARGV.shift
+
+unless File.directory?(ttl_files_directory)
+  $stderr.puts "ttl_files_directory `#{ttl_files_directory}` is not a directory"
+  exit 1
+end
+
+Syslog.open
+
+Dir[File.join(ttl_files_directory, "*.ttl")].each do |file|
+  begin
+    pid = File.basename(file, ".ttl").to_i
+    if pid == 0
+      FileUtils.rm_f(file)
+      next
+    end
+
+    started = File.stat(file).mtime
+    elapsed = (Time.now - started).to_i
+    queue, ttl = File.readlines(file).map {|l| l.chomp }
+    ttl = ttl.to_i + GRACE
+
+    if elapsed > ttl
+      Syslog.notice("killing child #{pid} with HUP. processing #{queue.inspect}, elapsed #{elapsed} > ttl #{ttl}")
+      Process.kill("HUP", pid)
+    end
+  rescue Errno::ENOENT, Errno::ESRCH
+    FileUtils.rm_f(file)
+  end
+end
