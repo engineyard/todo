@@ -8,6 +8,7 @@ class Chef
         if File.exist?(app_path)
           apps << app_name_and_data
         end
+        apps
       end
     end
   end
