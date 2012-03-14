@@ -37,6 +37,7 @@ GEM
     delayed_job_active_record (0.3.2)
       activerecord (> 2.1.0)
       delayed_job (~> 3.0.0)
+    delayed_job_admin (1.0.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.5.0)
@@ -106,6 +107,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-jdbc-adapter
   delayed_job_active_record
+  delayed_job_admin
   jdbc-mysql
   jdbc-postgres
   jdbc-sqlite3
