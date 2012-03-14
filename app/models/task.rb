@@ -4,5 +4,8 @@ class Task < ActiveRecord::Base
     
     validates :name, :presence => true
 
-
+    def uncheck!
+      self.done = false
+      self.save
+    end
 end

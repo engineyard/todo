@@ -5,4 +5,5 @@ class UncheckTask < Struct.new(:task_id)
       task.save
     end
   end
+  handle_asynchronously :perform
 end
