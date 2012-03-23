@@ -23,6 +23,10 @@ platforms :jruby do
 end
 
 
+gem "engineyard"
+gem "ey_config"
+gem "engineyard-recipes", :group => [:development]
+gem "eycloud-helper-common", :group => :eycloud
 
 
 # Bundle gems for the local environment. Make sure to
