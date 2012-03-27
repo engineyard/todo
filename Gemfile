@@ -2,14 +2,16 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 
-gem 'mongoid', '~> 2.2'
-gem 'bson_ext', '~> 1.4'
+gem 'mongoid', '~> 2.2.6'
+gem 'bson_ext', '~> 1.6.1'
 
 gem 'simple_form', '1.5.1'
 gem 'jquery-rails', '1.0.14'
 
+gem 'ey_config'
+
 platform :ruby do
-  gem 'mysql2', '~> 0.2.7' 
+  gem 'mysql2', '~> 0.2.7', :groups => [:production]
   gem 'unicorn'
 end
 
