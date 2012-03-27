@@ -1,0 +1,17 @@
+development:
+   host: staff.mongohq.com
+   port: 10004
+   username: mongo_thom
+   password: mongo_thom
+   database: ey_mongo_dev
+
+# test:
+#    host: staff.mongohq.com
+#    port: 10004
+#    username: mongo_thom
+#    password: mongo_thom
+#    database: ey_mongo_test
+
+# set these environment variables on your prod server
+production:
+  uri: <%= EY::Config.get(:mongohq, 'MONGOHQ_URL') %>

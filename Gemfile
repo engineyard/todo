@@ -5,8 +5,13 @@ gem 'rails', '3.0.9'
 gem 'simple_form', '1.5.1'
 gem 'jquery-rails', '1.0.14'
 
+gem 'mongoid', '~> 2.2.6'
+gem 'bson_ext', '~> 1.6.1'
+
+gem 'ey_config'
+
 platform :ruby do
-  gem 'mysql2', '~> 0.2.7'
+  gem 'mysql2', '~> 0.2.7', :groups => [:production]
   gem 'pg'
   gem 'sqlite3' 
   gem 'unicorn'
@@ -21,9 +26,6 @@ platforms :jruby do
   gem 'trinidad'
   gem 'thor'
 end
-
-
-
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
