@@ -24,6 +24,6 @@ execute "ebuild le-0.8.15.ebuild digest" do
 end
 
 package 'dev-util/le' do
-  version node[:le_version]
+  version '0.8.15'
   action :install
 end

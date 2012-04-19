@@ -5,6 +5,6 @@
 
 # TODO - manage by monit
 execute "le monitor" do
-  command "nohup le monitor &"
+  command "le monitordaemon &"
   action :run
 end
