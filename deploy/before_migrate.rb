@@ -1,2 +1,2 @@
 # Runs application cookbooks
-run "cd #{latest_release}; sudo bundle exec chef-solo -c #{latest_release}/deploy/solo.rb -j /etc/chef/dna.json"
+sudo "/usr/local/ey_resin/ruby/bin/chef-solo -c #{latest_release}/deploy/solo.rb -j /etc/chef/dna.json"

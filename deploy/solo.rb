@@ -1,5 +1,7 @@
+puts "running solo..."
+puts "node: " + node.inspect
+
 base_dir = File.dirname(__FILE__)
-node = Yajl::Parser.new.parse(File.new("/etc/chef-custom/dna.json", "r"))
 
 cookbooks_path = "#{base_dir}/cookbooks"
 
@@ -8,6 +10,8 @@ file_cache_path   base_dir
 cookbook_path     cookbooks_path
 role_path         "#{base_dir}/roles"
 node_name         node["engineyard"]["this"]
+
+puts "node: " + node.inspect
 
 require "fileutils"
 $LOAD_PATH.each do |path|
