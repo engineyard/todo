@@ -22,7 +22,9 @@ platforms :jruby do
   gem 'thor'
 end
 
-
+group :rbx do
+  gem 'puma'
+end
 
 
 # Bundle gems for the local environment. Make sure to
