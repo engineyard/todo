@@ -2,35 +2,20 @@
 # Cookbook Name:: le
 # Recipe:: configure
 #
-
-puts node.inspect
-
-le_key = nil
-
-node[:engineyard][:environment][:apps].each do |app|
-  puts app.inspect
-  app[:components].each do |component|
-    puts component.inspect
-    if component[:key] == "addons"
-      component[:collection].each do |elem|
-        puts elem.inspect
-        if elem[:name] == "Logentries"
-          le_key = component[:config][:vars]["LE_API_KEY"]
-        end
-      end
-    end
-  end
-end
-
-puts "le_key: #{le_key}"
+base_dir = File.dirname(__FILE__)
+ey_services_config = YAML::load_file("#{base_dir}/../../../../config/ey_services_config_deploy.yml")
 
 execute "le register --user-key" do
-  command "le register --user-key #{le_key}"
+  command "le register --user-key #{ey_services_config["logentries"]["LE_API_KEY"]}"
   action :run
 end
 
-follow_paths = []
+follow_paths = [
+  "/var/log/syslog",
+  "/var/log/auth.log"
+]
 (node[:applications] || []).each do |app_name, app_info|
+  follow_paths << "/var/log/nginx/#{app_name}.access.log"
   follow_paths << "/data/#{app_name}/shared/log/#{node['environment']['framework_env']}.log"
 end
 
