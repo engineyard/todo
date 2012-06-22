@@ -10,6 +10,8 @@ platform :ruby do
   gem 'pg', '~> 0.13.2'
   gem 'sqlite3' 
   gem 'unicorn'
+  gem 'newrelic_rpm'
+  gem 'ey_config'
 end
 
 platforms :jruby do
