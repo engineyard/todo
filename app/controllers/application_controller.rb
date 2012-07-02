@@ -1,10 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
-  protected
+  before_filter :authenticate_user!
   
-  # TODO use session
-  def current_user
-    User.last
-  end
 end

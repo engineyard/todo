@@ -30,8 +30,14 @@ GEM
       activesupport (= 3.0.9)
     activesupport (3.0.9)
     arel (2.0.10)
+    bcrypt-ruby (3.0.1)
+    bcrypt-ruby (3.0.1-java)
     bouncy-castle-java (1.5.0146.1)
     builder (2.1.2)
+    devise (1.5.3)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.3)
+      warden (~> 1.1)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.5.0)
@@ -52,6 +58,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     mysql2 (0.2.13)
+    orm_adapter (0.0.7)
     pg (0.13.2)
     polyglot (0.3.2)
     puma (1.2.1)
@@ -97,6 +104,8 @@ GEM
       kgio (~> 2.4)
       rack
       raindrops (~> 0.6)
+    warden (1.2.1)
+      rack (>= 1.0)
 
 PLATFORMS
   java
@@ -104,6 +113,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-jdbc-adapter
+  devise
   jdbc-mysql
   jdbc-postgres
   jdbc-sqlite3
