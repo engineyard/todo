@@ -2,6 +2,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(params[:list])
+    @list.user = current_user
     if @list.save
         flash[:notice] = "Your list was created"
     else
@@ -11,7 +12,7 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    @list = List.find(params[:id])
+    @list = List.for_user(current_user).find(params[:id])
     @list.destroy
 
     respond_to do |format|

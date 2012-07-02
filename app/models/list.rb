@@ -1,4 +1,5 @@
 class List < ActiveRecord::Base
+  belongs_to :user
   
   validates :name, :presence => true
   validates_uniqueness_of :name, :on => :create, :message => "must be unique"
@@ -9,4 +10,7 @@ class List < ActiveRecord::Base
      tasks.where(:done => true).order("updated_at DESC")
   end
   
+  def self.for_user(user)
+    where(:user_id => user.id)
+  end
 end

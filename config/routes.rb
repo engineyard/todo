@@ -1,5 +1,7 @@
 Listr::Application.routes.draw do
 
+  resources :users
+
   resources :lists, :only => [:create, :destroy] do
     resources :tasks, :except => [:new, :edit, :show]
   end

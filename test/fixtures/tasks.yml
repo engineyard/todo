@@ -1,11 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  user: one
   name: TaskOne
   done: false
   list: one
 
 two:
+  user: one
   name: TaskTwo
   done: false
   list: one

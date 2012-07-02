@@ -2,9 +2,9 @@ class TasksController < ApplicationController
 
 
   def index
-    @todo   = Task.where(:done => false)
+    @todo   = Task.for_user(current_user).where(:done => false)
     @task   = Task.new
-    @lists  = List.all
+    @lists  = List.for_user(current_user)
     @list   = List.new
     
     respond_to do |format|
@@ -14,8 +14,9 @@ class TasksController < ApplicationController
 
 
   def create
-    @list = List.find(params[:list_id])
+    @list = List.for_user(current_user).find(params[:list_id])
     @task = @list.tasks.new(params[:task])
+    @task.user = current_user
     if @task.save
         flash[:notice] = "Your task was created."
     else
@@ -26,7 +27,7 @@ class TasksController < ApplicationController
   
 
   def update
-    @list = List.find(params[:list_id])
+    @list = List.for_user(current_user).find(params[:list_id])
     @task = @list.tasks.find(params[:id])
 
     respond_to do |format|
@@ -40,7 +41,7 @@ class TasksController < ApplicationController
 
 
   def destroy
-    @task = Task.find(params[:id])
+    @task = Task.for_user(current_user).find(params[:id])
     @task.destroy
 
     respond_to do |format|
