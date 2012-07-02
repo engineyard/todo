@@ -19,7 +19,12 @@
             	<a href="http://www.engineyard.com">Engine Yard</a>
             </div>
             <h1><span class="intro">Getting Things Done</span> deployed on <span class="branding">Engine Yard AppCloud</span></h1>
-            <p class="sample">Sample Deployment Application</p>
+            <p class="sample">
+              <% if current_user -%>
+                <%= current_user.email %> |
+                <%= link_to "logout", destroy_user_session_path, :method => :delete %>
+              <% end -%>
+              </p>
         </div>
         <div id="content">
             <% if alerted = alert %>
