@@ -1,5 +1,9 @@
 Listr::Application.routes.draw do
 
+  get "saml/index"
+
+  get "saml/consume"
+
   devise_for :users
 
   resources :users

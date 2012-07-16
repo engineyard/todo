@@ -6,6 +6,7 @@ gem 'simple_form', '1.5.1'
 gem 'jquery-rails', '1.0.14'
 
 gem 'devise'
+gem 'ruby-saml'
 
 platform :ruby do
   gem 'mysql2', '~> 0.2.7'
