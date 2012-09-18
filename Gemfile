@@ -3,14 +3,20 @@ source 'http://rubygems.org'
 gem "rails", "~> 3.2.8"
 
 gem 'simple_form'
-gem 'jquery-rails', '1.0.14'
+gem 'jquery-rails'
 gem 'rails_autolink'
+
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
 
 
 platform :ruby do
   gem 'pg'
   gem 'sqlite3'
-  gem 'mysql2', '~> 0.3.7'
+  gem 'mysql2'
   gem 'unicorn'
 end
 
