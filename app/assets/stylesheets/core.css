@@ -52,7 +52,7 @@ ul.tasks li p.delete-task a:hover { background:#8ab5d1;}
 ul.finished-tasks li p.delete-task a {background:#d5d5d5; color:#aaa;}
 ul.finished-tasks li p.delete-task a:hover {background:#bbb; color:#666;}
 ul.finished-tasks li p.delete-task {position:absolute; top:6px; right:6px; margin:0; padding:0; line-height:1em;}
-ul.finished-tasks li { 
+ul.finished-tasks li {
   font-size:11px;
   color:#999;
   padding:5px 9px;
