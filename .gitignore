@@ -3,3 +3,5 @@ db/*.sqlite3
 tmp
 .DS_Store
 .sass-cache
+data
+logstash-1.1.1-monolithic.jar
