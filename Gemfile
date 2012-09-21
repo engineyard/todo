@@ -41,3 +41,6 @@ end
 group :development, :test do
 
 end
+
+gem 'logstash-event', :path => 'vendor/logstash'
+gem 'yarder'
