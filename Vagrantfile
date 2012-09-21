@@ -31,9 +31,10 @@ Vagrant::Config.run do |config|
 
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
-  config.vm.forward_port 9292, 9292
-  config.vm.forward_port 9200, 9200
-  config.vm.forward_port 3000, 3000
+  config.vm.forward_port 9292, 9292 # logstash
+  config.vm.forward_port 9200, 9200 # elasticsearch
+  config.vm.forward_port 3000, 3000 # todo app
+  config.vm.forward_port 5601, 5601 # Kibana
 
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
