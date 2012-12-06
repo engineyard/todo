@@ -5,6 +5,7 @@ gem "rails", "~> 3.2.8"
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'rails_autolink'
+gem 'ey_config'
 
 group :assets do
   gem 'sass-rails'

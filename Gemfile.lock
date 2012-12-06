@@ -40,6 +40,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    ey_config (0.0.6)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -121,6 +122,7 @@ DEPENDENCIES
   activerecord-jdbc-adapter
   activerecord-jdbcpostgresql-adapter
   coffee-rails
+  ey_config
   jdbc-mysql
   jdbc-postgres
   jdbc-sqlite3
