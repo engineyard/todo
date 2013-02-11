@@ -13,7 +13,6 @@ group :assets do
   gem 'uglifier'
 end
 
-
 platform :ruby do
   gem 'pg'
   gem 'sqlite3'
