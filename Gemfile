@@ -5,7 +5,7 @@ end
 
 source 'http://rubygems.org'
 
-gem "rails", "~> 3.2.12"
+gem "rails", "~> 4.0.0.beta1"
 
 gem 'simple_form'
 gem 'jquery-rails'
@@ -13,7 +13,7 @@ gem 'rails_autolink'
 gem 'ey_config'
 
 group :assets do
-  gem 'sass-rails'
+  gem 'sass-rails', '4.0.0.rc1'
   gem 'coffee-rails'
   gem 'uglifier'
 end
