@@ -10,6 +10,7 @@ gem "rails", "~> 3.2.12"
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'rails_autolink'
+gem 'newrelic_rpm'
 gem 'ey_config'
 
 group :assets do
