@@ -1,4 +1,5 @@
-environments: 
-  production: 
-   copy_exclude: 
+environments:
+  production:
+   copy_exclude:
    - .git
+   precompile_assets: true
