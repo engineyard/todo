@@ -23,6 +23,8 @@ platform :ruby do
   gem 'sqlite3'
   gem 'mysql2'
   gem 'unicorn'
+  gem 'newrelic_rpm'
+  gem 'ey_config'
 end
 
 platforms :jruby do
