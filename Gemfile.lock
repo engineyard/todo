@@ -56,6 +56,7 @@ GEM
     mime-types (1.21)
     multi_json (1.5.1)
     mysql2 (0.3.11)
+    newrelic_rpm (3.6.5.130)
     pg (0.14.1)
     polyglot (0.3.3)
     puma (1.6.3)
@@ -130,6 +131,7 @@ DEPENDENCIES
   jquery-rails
   jruby-openssl
   mysql2
+  newrelic_rpm
   pg
   puma
   rails (~> 3.2.12)
