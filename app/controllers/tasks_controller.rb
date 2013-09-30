@@ -1,29 +1,37 @@
 class TasksController < ApplicationController
-
-
   def index
     @todo   = Task.where(:done => false)
     @task   = Task.new
     @lists  = List.all
     @list   = List.new
-    
+
     respond_to do |format|
       format.html
+      format.json do
+        render :json => {:tasks => Task.all.map(&:to_json) }
+      end
     end
   end
-
 
   def create
     @list = List.find(params[:list_id])
     @task = @list.tasks.new(params[:task])
     if @task.save
-        flash[:notice] = "Your task was created."
+      status = "success"
+      flash[:notice] = "Your task was created."
     else
-        flash[:alert] = "There was an error creating your task."
+      status = "failure"
+      flash[:alert] = "There was an error creating your task."
     end
-    redirect_to(list_tasks_url(@list))
+    respond_to do |format|
+      format.html do
+        redirect_to(list_tasks_url(@list))
+      end
+      format.json do
+        render :json => {:status => status, :task => @task.to_json}
+      end
+    end
   end
-  
 
   def update
     @list = List.find(params[:list_id])
@@ -38,7 +46,6 @@ class TasksController < ApplicationController
     end
   end
 
-
   def destroy
     @list = List.find(params[:list_id])
     @task = Task.find(params[:id])
@@ -48,6 +55,4 @@ class TasksController < ApplicationController
       format.html { redirect_to(list_tasks_url(@list)) }
     end
   end
-  
- 
 end
