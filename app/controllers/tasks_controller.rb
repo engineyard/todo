@@ -15,7 +15,8 @@ class TasksController < ApplicationController
 
   def create
     @list = List.find(params[:list_id])
-    @task = @list.tasks.new(params[:task])
+    task_params = params[:task].is_a?(String) ? JSON.parse(params[:task]) : params[:task]
+    @task = @list.tasks.new(task_params)
     if @task.save
       status = "success"
       flash[:notice] = "Your task was created."
