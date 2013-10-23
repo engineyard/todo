@@ -40,6 +40,7 @@ end
 
 group :rbx do
   gem 'puma'
+  gem 'rubysl'
 end
 
 # Bundle gems for the local environment. Make sure to
