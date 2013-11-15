@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'rails_autolink'
 gem 'ey_config'
 gem 'unicorn'
+gem 'puma'
 
 group :assets do
   gem 'sass-rails'
@@ -39,7 +40,6 @@ platforms :jruby do
 end
 
 platform :rbx do
-  gem 'puma'
   gem 'rubysl'
 end
 
