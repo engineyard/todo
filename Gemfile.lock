@@ -335,6 +335,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-jdbc-adapter
   activerecord-jdbcpostgresql-adapter
+  activerecord-jdbcsqlite3-adapter
   coffee-rails
   ey_config
   jdbc-mysql
