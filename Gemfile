@@ -11,6 +11,7 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'rails_autolink'
 gem 'ey_config'
+gem 'unicorn'
 
 group :assets do
   gem 'sass-rails'
@@ -22,7 +23,6 @@ platform :ruby do
   gem 'pg'
   gem 'sqlite3'
   gem 'mysql2'
-  gem 'unicorn'
   gem 'newrelic_rpm'
   gem 'ey_config'
 end
@@ -38,7 +38,7 @@ platforms :jruby do
   gem 'thor'
 end
 
-group :rbx do
+platform :rbx do
   gem 'puma'
   gem 'rubysl'
 end
