@@ -11,7 +11,6 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'rails_autolink'
 gem 'ey_config'
-gem 'unicorn'
 gem 'puma'
 
 group :assets do
@@ -26,6 +25,7 @@ platform :ruby do
   gem 'mysql2'
   gem 'newrelic_rpm'
   gem 'ey_config'
+  gem 'unicorn'
 end
 
 platforms :jruby do
