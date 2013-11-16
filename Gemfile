@@ -24,7 +24,6 @@ platform :ruby do
   gem 'sqlite3'
   gem 'mysql2'
   gem 'newrelic_rpm'
-  gem 'ey_config'
   gem 'unicorn'
 end
 
