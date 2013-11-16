@@ -11,6 +11,7 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'rails_autolink'
 gem 'ey_config'
+gem 'puma'
 
 group :assets do
   gem 'sass-rails'
@@ -22,14 +23,14 @@ platform :ruby do
   gem 'pg'
   gem 'sqlite3'
   gem 'mysql2'
-  gem 'unicorn'
   gem 'newrelic_rpm'
-  gem 'ey_config'
+  gem 'unicorn'
 end
 
 platforms :jruby do
-  gem 'activerecord-jdbc-adapter'
+  gem 'activerecord-jdbc-adapter', '~> 1.3'
   gem 'activerecord-jdbcpostgresql-adapter'
+  gem 'activerecord-jdbcsqlite3-adapter'
   gem 'jruby-openssl'
   gem 'jdbc-mysql', :require => false
   gem 'jdbc-sqlite3', :require => false
@@ -38,8 +39,12 @@ platforms :jruby do
   gem 'thor'
 end
 
-group :rbx do
-  gem 'puma'
+platform :rbx do
+  gem 'rubysl', '~> 2.0'
+  gem 'json'
+  gem 'racc'
+  gem 'psych'
+  gem 'minitest'
 end
 
 # Bundle gems for the local environment. Make sure to
