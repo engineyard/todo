@@ -330,7 +330,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-jdbc-adapter
+  activerecord-jdbc-adapter (~> 1.3)
   activerecord-jdbcpostgresql-adapter
   activerecord-jdbcsqlite3-adapter
   coffee-rails

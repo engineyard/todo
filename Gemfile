@@ -29,7 +29,7 @@ platform :ruby do
 end
 
 platforms :jruby do
-  gem 'activerecord-jdbc-adapter'
+  gem 'activerecord-jdbc-adapter', '~> 1.3'
   gem 'activerecord-jdbcpostgresql-adapter'
   gem 'activerecord-jdbcsqlite3-adapter'
   gem 'jruby-openssl'
@@ -41,7 +41,7 @@ platforms :jruby do
 end
 
 platform :rbx do
-  gem 'rubysl'
+  gem 'rubysl', '~> 2.0'
   gem 'json'
   gem 'racc'
   gem 'psych'
