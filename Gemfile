@@ -42,6 +42,10 @@ end
 
 platform :rbx do
   gem 'rubysl'
+  gem 'json'
+  gem 'racc'
+  gem 'psych'
+  gem 'minitest'
 end
 
 # Bundle gems for the local environment. Make sure to

@@ -61,8 +61,10 @@ GEM
     newrelic_rpm (3.6.5.130)
     pg (0.14.1)
     polyglot (0.3.3)
+    psych (2.0.1)
     puma (1.6.3)
       rack (~> 1.2)
+    racc (1.4.10)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -343,10 +345,14 @@ DEPENDENCIES
   jdbc-sqlite3
   jquery-rails
   jruby-openssl
+  json
+  minitest
   mysql2
   newrelic_rpm
   pg
+  psych
   puma
+  racc
   rails (~> 3.2.12)
   rails_autolink
   rubysl
