@@ -2,8 +2,4 @@ defaults:
   copy_exclude:
   - .git
   precompile_assets: true
-
-environments:
-  production:
-   copy_exclude:
-   - .git
+  ignore_gemfile_lock_warning: true
