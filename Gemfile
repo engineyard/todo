@@ -51,7 +51,7 @@ end
 
 platform :rbx do
   gem 'rubysl', '~> 2.0'
-  gem 'rubysl-test-unit', '~> 2.0'
+  gem 'rubysl-test-unit', '~> 2.0', :require => false
 end
 
 # Bundle gems for the local environment. Make sure to
