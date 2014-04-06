@@ -12,6 +12,10 @@ Listr::Application.configure do
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
 
+  config.action_controller.asset_host = EY::Config.get(:fastly, "FASTLY_CDN_URL")
+  config.static_cache_control = "public, max-age=2592000"
+  config.assets.digest = true
+
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
