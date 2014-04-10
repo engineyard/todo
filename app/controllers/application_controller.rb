@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
       request.session_options[:skip] = true  # removes session data
       response.headers['Cache-Control'] = 'public, no-cache'
       # response.headers['Surrogate-Key'] = "blah"
-      response.headers['Surrogate-Control'] = "max-age: #{max_age}"
+      response.headers['Surrogate-Control'] = "max-age=#{max_age}"
     end
   end
 
