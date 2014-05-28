@@ -12,9 +12,6 @@ gem 'jquery-rails', '~> 3.0'
 gem 'rails_autolink', '~> 1.1'
 gem 'simple_form', '~> 2.1'
 
-gem 'puma', '~> 2.6'
-
-
 group :assets do
   gem 'sass-rails', '~> 3.2'
   gem 'coffee-rails', '~> 3.2'
@@ -28,7 +25,7 @@ platform :ruby do
 
   gem 'newrelic_rpm', '~> 3.6'
   gem 'unicorn', '~> 4.7'
-
+  gem 'puma', '~> 2.6'
   gem 'json', '~> 1.8'
   gem 'minitest', '~> 4.7'
   gem 'psych', '~> 2.0'
