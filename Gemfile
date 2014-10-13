@@ -19,9 +19,9 @@ group :assets do
 end
 
 platform :ruby do
-  gem 'mysql2', '~> 0.3'
+  # gem 'mysql2', '~> 0.3'
   gem 'pg', '~> 0.17'
-  gem 'sqlite3', '1.3.8' # 1.3.9 broken on rbx
+  # gem 'sqlite3', '1.3.8' # 1.3.9 broken on rbx
 
   gem 'newrelic_rpm', '~> 3.6'
   gem 'unicorn', '~> 4.7'
@@ -55,5 +55,7 @@ end
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-
+  gem 'capistrano', "~> 2.15"
+  gem "net-ssh", "~> 2.7.0"
+  gem 'capistrano-rbenv'
 end
