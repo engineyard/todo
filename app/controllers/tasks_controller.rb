@@ -15,8 +15,9 @@ class TasksController < ApplicationController
 
   def create
     @list = List.find(params[:list_id])
-    task_params = params[:task].is_a?(String) ? JSON.parse(params[:task]) : params[:task]
-    @task = @list.tasks.new(task_params)
+    raw_params = params[:task].is_a?(String) ? JSON.parse(params[:task]) : params[:task]
+    task_params = ActionController::Parameters.new(raw_params)
+    @task = @list.tasks.new(task_params.permit(:name))
     if @task.save
       status = "success"
       flash[:notice] = "Your task was created."
@@ -39,7 +40,7 @@ class TasksController < ApplicationController
     @task = @list.tasks.find(params[:id])
 
     respond_to do |format|
-      if @task.update_attributes(params[:task])
+      if @task.update_attributes(task_attributes)
         format.html { redirect_to( list_tasks_url(@list), :notice => 'Task was successfully updated.') }
       else
         format.html { render :action => "edit" }
@@ -55,5 +56,11 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(list_tasks_url(@list)) }
     end
+  end
+
+  private
+
+  def task_attributes
+    params.require(:task).permit(:name, :done, :list_id)
   end
 end

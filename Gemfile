@@ -5,31 +5,30 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.12'
+gem 'rails', '~> 4.2.0'
 
-gem 'ey_config', '0.0.6'
-gem 'jquery-rails', '~> 3.0'
-gem 'rails_autolink', '~> 1.1'
-gem 'simple_form', '~> 2.1'
+gem 'ey_config'
+gem 'rails_autolink'
+gem 'simple_form'
 
-group :assets do
-  gem 'sass-rails', '~> 3.2'
-  gem 'coffee-rails', '~> 3.2'
-  gem 'uglifier', '~> 2.3'
-end
+# Assets
+gem 'jquery-rails'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
 platform :ruby do
-  gem 'mysql2', '~> 0.3'
-  gem 'pg', '~> 0.17'
-  gem 'sqlite3', '1.3.8' # 1.3.9 broken on rbx
+  gem 'mysql2'
+  gem 'pg'
+  gem 'sqlite3'
 
-  gem 'newrelic_rpm', '~> 3.6'
-  gem 'unicorn', '~> 4.7'
-  gem 'puma', '~> 2.6'
-  gem 'json', '~> 1.8'
-  gem 'minitest', '~> 4.7'
-  gem 'psych', '~> 2.0'
-  gem 'racc', '~> 1.4'
+  gem 'newrelic_rpm'
+  gem 'unicorn'
+  gem 'puma'
+  gem 'json'
+  gem 'minitest'
+  gem 'psych'
+  gem 'racc'
 end
 
 platforms :jruby do
@@ -42,13 +41,13 @@ platforms :jruby do
   gem 'jdbc-sqlite3', :require => false
   gem 'jdbc-postgres', :require => false
 
-  gem 'jruby-openssl', '~> 0.9'
-  gem 'trinidad', '~> 1.4'
+  gem 'jruby-openssl'
+  gem 'trinidad'
 end
 
 platform :rbx do
-  gem 'rubysl', '~> 2.0'
-  gem 'rubysl-test-unit', '~> 2.0', :require => false
+  gem 'rubysl'
+  gem 'rubysl-test-unit', :require => false
 end
 
 # Bundle gems for the local environment. Make sure to
