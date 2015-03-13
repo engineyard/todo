@@ -19,13 +19,13 @@ gem 'uglifier'
 
 platform :ruby do
   gem 'mysql2'
-  gem 'pg'
+  gem 'pg', '>= 0.18.1'
   gem 'sqlite3'
 
   gem 'newrelic_rpm'
   gem 'unicorn'
   gem 'puma'
-  gem 'json'
+  gem 'json', '>= 1.8.2'
   gem 'minitest'
   gem 'psych'
   gem 'racc'
