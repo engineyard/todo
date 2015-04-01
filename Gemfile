@@ -20,6 +20,7 @@ gem 'uglifier'
 platform :ruby do
   gem 'mysql2'
   gem 'pg'
+  gem 'activerecord-postgis-adapter'
   gem 'sqlite3'
 
   gem 'newrelic_rpm'
