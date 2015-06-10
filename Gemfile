@@ -21,7 +21,6 @@ platform :ruby do
   gem 'mysql2'
   gem 'pg'
   gem 'activerecord-postgis-adapter', '3.0.0.beta2'
-  gem 'sqlite3'
 
   gem 'newrelic_rpm'
   gem 'unicorn'
@@ -37,9 +36,7 @@ platforms :jruby do
   gem 'activerecord-jdbc-adapter', ar_jdbc_version
   gem 'activerecord-jdbcmysql-adapter', ar_jdbc_version
   gem 'activerecord-jdbcpostgresql-adapter', ar_jdbc_version
-  gem 'activerecord-jdbcsqlite3-adapter', ar_jdbc_version
   gem 'jdbc-mysql', :require => false
-  gem 'jdbc-sqlite3', :require => false
   gem 'jdbc-postgres', :require => false
 
   gem 'jruby-openssl'
