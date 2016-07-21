@@ -28,6 +28,7 @@ platform :ruby do
   gem 'json'
   gem 'minitest'
   gem 'psych'
+  gem 'racc'
   gem 'rack', '2.0.1'
 end
 
