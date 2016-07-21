@@ -24,12 +24,11 @@ platform :ruby do
   gem 'sqlite3'
 
   gem 'newrelic_rpm'
-  gem 'unicorn'
-  gem 'puma'
+  gem 'unicorn', '5.1.0'
   gem 'json'
   gem 'minitest'
   gem 'psych'
-  gem 'racc'
+  gem 'rack', '2.0.1'
 end
 
 platforms :jruby do
