@@ -24,7 +24,7 @@ platform :ruby do
   gem 'sqlite3'
 
   gem 'newrelic_rpm'
-  gem 'unicorn'
+  gem 'unicorn', '5.1.0'
   gem 'puma'
   gem 'json'
   gem 'minitest'
