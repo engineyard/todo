@@ -25,11 +25,10 @@ platform :ruby do
 
   gem 'newrelic_rpm'
   gem 'unicorn', '5.1.0'
-  gem 'puma'
   gem 'json'
   gem 'minitest'
   gem 'psych'
-  gem 'racc'
+  gem 'rack', '2.0.1'
 end
 
 platforms :jruby do
