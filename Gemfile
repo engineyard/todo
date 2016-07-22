@@ -28,7 +28,7 @@ platform :ruby do
   gem 'json'
   gem 'minitest'
   gem 'psych'
-  gem 'racc', '2.0.1'
+  gem 'racc'
 end
 
 platforms :jruby do
