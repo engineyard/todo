@@ -57,3 +57,5 @@ end
 group :development, :test do
 
 end
+
+gem 'thinking-sphinx'
