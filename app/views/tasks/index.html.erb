@@ -26,7 +26,7 @@
 
                 <div class="split-fields">
                     <div class="field">
-                        <%= f.input :name , :label => false, :placeholder => "Enter a new task" %>
+                        <%= f.input :name , :label => false, :placeholder => "ENV_VAR_TEST: #{ENV['ENV_VAR_TEST']}" %>
                     </div>
             	    <div class="button">
             	        <%= f.button :submit,  "Add Task" %>
