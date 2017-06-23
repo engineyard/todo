@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (4.2.0)
       actionpack (= 4.2.0)
@@ -324,6 +324,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    scout_apm (2.1.26)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -379,8 +380,12 @@ DEPENDENCIES
   rubysl
   rubysl-test-unit
   sass-rails
+  scout_apm
   simple_form
   sqlite3
   trinidad
   uglifier
   unicorn
+
+BUNDLED WITH
+   1.14.6

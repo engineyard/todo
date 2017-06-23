@@ -3,7 +3,7 @@ if RUBY_VERSION =~ /1.9/
   Encoding.default_internal = Encoding::UTF_8
 end
 
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '~> 4.2.0'
 
@@ -30,6 +30,7 @@ platform :ruby do
   gem 'minitest'
   gem 'psych'
   gem 'racc'
+  gem 'scout_apm'
 end
 
 platforms :jruby do
