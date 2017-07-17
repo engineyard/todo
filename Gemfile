@@ -11,6 +11,7 @@ gem 'ey_config'
 gem 'rails_autolink'
 gem 'simple_form'
 
+gem 'bundler'
 gem 'passenger', '4.0.60'
 
 # Assets
