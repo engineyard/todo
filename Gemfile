@@ -11,6 +11,8 @@ gem 'ey_config'
 gem 'rails_autolink'
 gem 'simple_form'
 
+gem 'passenger', '4.0.60'
+
 # Assets
 gem 'jquery-rails'
 gem 'sass-rails'
@@ -25,7 +27,6 @@ platform :ruby do
 
   gem 'newrelic_rpm'
   gem 'unicorn'
-  gem 'puma'
   gem 'json'
   gem 'minitest'
   gem 'psych'
