@@ -12,7 +12,7 @@ gem 'rails_autolink'
 gem 'simple_form'
 
 gem 'bundler', '1.15.2'
-gem 'passenger', '4.0.60'
+#gem 'passenger', '4.0.60'
 
 # Assets
 gem 'jquery-rails'

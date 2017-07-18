@@ -55,7 +55,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    daemon_controller (1.2.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     equalizer (0.0.11)
@@ -87,10 +86,6 @@ GEM
     newrelic_rpm (4.2.0.334)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
-    passenger (4.0.60)
-      daemon_controller (>= 1.2.0)
-      rack
-      rake (>= 0.8.1)
     pg (0.21.0)
     psych (2.2.4)
     racc (1.4.14)
@@ -395,7 +390,6 @@ DEPENDENCIES
   minitest
   mysql2
   newrelic_rpm
-  passenger (= 4.0.60)
   pg
   psych
   racc
