@@ -11,7 +11,7 @@ gem 'ey_config'
 gem 'rails_autolink'
 gem 'simple_form'
 
-gem 'bundler'
+gem 'bundler', '1.15.2'
 gem 'passenger', '4.0.60'
 
 # Assets
@@ -19,6 +19,8 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
+
+gem 'virtus', '1.0.0.rc1'
 
 platform :ruby do
   gem 'mysql2'
