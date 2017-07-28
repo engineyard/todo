@@ -1,0 +1,16 @@
+<table class="environment-variables" border="1">
+  <thead>
+    <tr>
+      <th class="name">Name</th>
+      <th class="value">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% ENV.sort.each do |name, value| %>
+    <tr>
+      <td><strong><%= name %></strong></td>
+      <td><%= value %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
