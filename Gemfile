@@ -19,9 +19,7 @@ gem 'uglifier'
 
 platform :ruby do
   gem 'mysql2'
-  gem 'pg'
   gem 'activerecord-postgis-adapter', '3.0.0.beta2'
-  gem 'sqlite3'
 
   gem 'newrelic_rpm'
   gem 'unicorn'
@@ -32,9 +30,12 @@ platform :ruby do
   gem 'racc'
 end
 
-platform :mswin, :mingw, :x64_mingw do
+platform :ruby, :mswin, :mingw, :x64_mingw do
   gem 'pg'
   gem 'sqlite3'
+end
+
+platform :mswin, :mingw, :x64_mingw do
   gem 'tzinfo-data'
 end
 
