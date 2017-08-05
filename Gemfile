@@ -32,6 +32,12 @@ platform :ruby do
   gem 'racc'
 end
 
+platform :mswin, :mingw, :x64_mingw do
+  gem 'pg'
+  gem 'sqlite3'
+  gem 'tzinfo-data'
+end
+
 platforms :jruby do
   ar_jdbc_version = '~> 1.3'
   gem 'activerecord-jdbc-adapter', ar_jdbc_version
