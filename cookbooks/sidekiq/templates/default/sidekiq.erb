@@ -1,0 +1,92 @@
+#!/bin/sh
+
+#
+#   /engineyard/bin/sidekiq
+#
+#   Author: Jim Neath (jneath@engineyard.com)
+#
+
+# must be root
+if [[ "$(whoami)" != "root" ]]; then
+  echo "Must be run as root"
+  exit 1
+fi
+
+# arguments 
+app_name=$1 action=$2 rails_env=$3 worker_id=$4
+
+# variables
+app_root="/data/${app_name}/current"
+worker_ref="sidekiq_${worker_id}"
+pid_dir="/var/run/engineyard/sidekiq/${app_name}"
+pid_file="${pid_dir}/${worker_ref}.pid"
+log_file="${app_root}/log/${worker_ref}.log"
+conf_file="/data/${app_name}/shared/config/${worker_ref}.yml"
+app_user=$(stat -L -c"%U" "${app_root}")
+custom_env="/data/${app_name}/shared/config/env.custom"
+
+sidekiq="${app_root}/ey_bundler_binstubs/sidekiq"
+sidekiqctl="${app_root}/ey_bundler_binstubs/sidekiqctl"
+
+# Load the custom env if it exists
+if [ -e "${custom_env}" ]
+then
+  source "${custom_env}"
+fi
+
+export HOME="/home/${app_user}"
+
+# change to current directory
+cd "${app_root}"
+
+# script usage
+usage ()
+{
+  echo "Usage: $0 <app_name> {start|stop} <rails_env> <worker_id>"
+  exit 1
+}
+
+# start sidekiq
+start ()
+{
+  # check if process is already running
+  if [[ -f $pid_file ]]; then
+    pid=$(cat "${pid_file}")
+
+    if [[ -d /proc/$pid ]]; then
+      echo "${0} is already running (${pid})"
+      exit 1
+    else
+      rm -f "${pid_file}"
+
+      # Ensure that the pid file is definitely gone to avoid a fs race
+      # condition that causes monit to start a rogue sidekiq worker
+      sleep 10
+    fi
+  fi
+
+  # start sidekiq
+  sudo -u "${app_user}" -E -H "${sidekiq}" -C "${conf_file}" -e "${rails_env}" -r "${app_root}" -P "${pid_file}" -L "${log_file}" &
+  exit $?
+}
+
+# stop sidekiq
+stop ()
+{
+  # stop using sidekiqctl
+  sudo -u "${app_user}" -E -H "${sidekiqctl}" stop "${pid_file}" <%= @timeout %>
+  exit $?
+}
+
+# sanity checks
+[[ $# -ne 4 ]] && usage
+[[ ! -L $app_root ]] && { echo "${app_root} does not exist"; exit 1; }
+[[ ! -f $conf_file ]] && { echo "${conf_file} does not exist"; exit 1; }
+[[ ! -d $pid_dir ]] && mkdir -p "${pid_dir}" && chown "${app_user}:${app_user}" "${pid_dir}"
+
+# execute action
+case "${action}" in
+  start) start;;
+  stop) stop;;
+  *) usage;;
+esac

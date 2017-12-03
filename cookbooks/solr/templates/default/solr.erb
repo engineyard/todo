@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# This script starts and stops the solr server
+# This script belongs in /engineyard/bin/solr
+#
+PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+RAILS_ENV=<%= @rails_env %>; export RAILS_ENV
+
+usage() {
+  echo "Usage: $0 {start, stop}"
+  exit 1
+}
+
+if [ $# -lt 1 ]; then usage; fi
+
+if [ -d /data/solr ]; then
+cd /data/solr
+  mkdir -p /var/log/engineyard/solr
+
+  # handle the second param, don't start if already existing
+  case "$1" in
+    start)
+      echo "Starting the Solr server."
+      if [ -f /var/run/solr/solr-8983.pid ]; then
+PID=`cat /var/run/solr/solr-8983.pid`
+        if [ ! -d /proc/$PID ]; then
+          rm -f /var/run/solr/solr.pid
+        fi
+      fi
+      SOLR_PID_DIR=/var/run/solr /data/solr/bin/solr start
+      ;;
+    stop)
+      echo "Stopping the solr server."
+      if [ -f /var/run/solr/solr-8983.pid ]; then
+        kill -9 `cat /var/run/solr/solr-8983.pid` 2>/dev/null; true
+      fi
+      ;;
+    *)
+      usage
+      ;;
+        esac
+else
+echo "/data/solr doesn't exist."
+  usage
+fi

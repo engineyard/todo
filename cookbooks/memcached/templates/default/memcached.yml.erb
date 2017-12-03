@@ -1,0 +1,29 @@
+defaults:
+  ttl: 1800
+  readonly: false
+  urlencode: false
+  c_threshold: 10000
+  compression: true
+  debug: false
+  namespace: <%= @app_name %>
+  sessions: false
+  session_servers: false
+  fragments: true
+  memory: 64
+  servers: localhost:11211
+  benchmarking: true
+  raise_errors: true
+  fast_hash: false
+  fastest_hash: false
+
+<%= @node[:environment][:framework_env] %>:
+  memory: 64
+  benchmarking: false
+  sessions: false
+  fragments: true
+  <% if !@server_names.nil? && !@server_names.empty? %>
+  servers:
+  <% @server_names.each do |server_name| %>
+  - <%= server_name %>:11211
+  <% end %>
+  <% end %>
