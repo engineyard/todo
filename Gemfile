@@ -19,14 +19,14 @@ gem 'uglifier'
 
 platform :ruby do
   gem 'mysql2'
-  gem 'pg'
+  gem 'pg', '~> 0.15'
   gem 'activerecord-postgis-adapter', '3.0.0.beta2'
   gem 'sqlite3'
 
   gem 'newrelic_rpm'
   gem 'unicorn'
   gem 'puma'
-  gem 'json'
+  gem 'json', '>= 2.0'
   gem 'minitest'
   gem 'psych'
   gem 'racc'
