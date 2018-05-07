@@ -3,5 +3,7 @@ Rails.application.routes.draw do
     resources :tasks, except: [:new, :edit, :show]
   end
 
+  get 'environment', to: 'environment#index'
+
   root "tasks#index"
 end
