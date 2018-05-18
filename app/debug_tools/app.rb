@@ -36,7 +36,7 @@ module App
     last_id = Task.last.id
     loop do
       Task.create!(name: random_word, list: List.all.sample)
-      Task.destroy!(last_id + 1)
+      Task.destroy(last_id + 1)
       last_id += 1
     end
   end
