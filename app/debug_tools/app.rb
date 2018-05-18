@@ -31,4 +31,13 @@ module App
     end
     word
   end
+
+  def self.create_and_delete_indefinitely_by_id
+    last_id = Task.last.id
+    loop do
+      Task.create!(name: random_word, list: List.all.sample)
+      Task.destroy!(last_id + 1)
+      last_id += 1
+    end
+  end
 end
