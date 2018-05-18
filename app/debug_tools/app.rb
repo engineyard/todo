@@ -38,6 +38,7 @@ module App
       Task.create!(name: random_word, list: List.all.sample)
       Task.destroy(last_id + 1)
       last_id += 1
+      sleep(2)
     end
   end
 end
