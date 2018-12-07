@@ -7,6 +7,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.0'
 
+gem 'sidekiq'
+
 gem 'ey_config'
 gem 'rails_autolink'
 gem 'simple_form', '~> 3.1.0'
