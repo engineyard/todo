@@ -14,7 +14,7 @@
   <% end %>
   <tr>
       <td><strong>which gem</strong></td>
-      <td><%= system("which gem") %></td>
+      <td><%= %x[which gem] %></td>
     </tr>
   </tbody>
 </table>
