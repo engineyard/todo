@@ -6,6 +6,7 @@ end
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.0'
+gem 'bundler', '1.16.6'
 
 gem 'ey_config'
 gem 'rails_autolink'
