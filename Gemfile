@@ -8,6 +8,8 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.2.0'
 
 gem 'delayed_job'
+gem 'daemons'
+
 gem 'ey_config'
 gem 'rails_autolink'
 gem 'simple_form', '~> 3.1.0'
