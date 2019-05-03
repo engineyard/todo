@@ -5,7 +5,7 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.7.2'
+gem 'rails', '5.2.3'
 
 gem 'delayed_job'
 gem 'delayed_job_active_record'
@@ -13,7 +13,7 @@ gem 'daemons'
 
 gem 'ey_config'
 gem 'rails_autolink'
-gem 'simple_form', '~> 3.3.0'
+gem 'simple_form'
 
 gem 'nokogiri', '~> 1.6.0'
 gem 'rake', '~> 10.4'
