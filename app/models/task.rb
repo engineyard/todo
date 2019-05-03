@@ -1,4 +1,4 @@
-class Task < ActiveRecord::Base
+class Task < ApplicationRecord
     
     belongs_to :list, class_name: "List", foreign_key: "list_id"
     
