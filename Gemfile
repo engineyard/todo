@@ -6,6 +6,7 @@ end
 source 'https://rubygems.org'
 
 gem 'rails', '5.2.3'
+gem 'bootsnap', require: false
 
 gem 'delayed_job'
 gem 'delayed_job_active_record'
@@ -64,5 +65,5 @@ end
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-
+  gem 'listen'
 end
