@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   def index
+    @headers = request.headers.env.reject { |key| key.to_s.include?('.') }
     @todo   = Task.where(:done => false)
     @task   = Task.new
     @lists  = List.all
