@@ -6,7 +6,7 @@ end
 source 'https://rubygems.org'
 
 gem 'rails', '5.2.3'
-gem 'bootsnap', require: false
+#gem 'bootsnap', require: false
 
 gem 'delayed_job'
 gem 'delayed_job_active_record'

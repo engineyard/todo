@@ -46,8 +46,6 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
-    bootsnap (1.4.4)
-      msgpack (~> 1.0)
     builder (3.2.3)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -95,7 +93,6 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.1.0)
     minitest (5.11.3)
-    msgpack (1.2.10)
     mysql2 (0.5.2)
     nio4r (2.3.1)
     nokogiri (1.6.8.1)
@@ -388,7 +385,6 @@ DEPENDENCIES
   activerecord-jdbcpostgresql-adapter (~> 1.3)
   activerecord-jdbcsqlite3-adapter (~> 1.3)
   activerecord-postgis-adapter
-  bootsnap
   coffee-rails
   daemons
   delayed_job
