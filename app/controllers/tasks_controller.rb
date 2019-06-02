@@ -16,7 +16,11 @@ class TasksController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     raw_params = params[:task].is_a?(String) ? JSON.parse(params[:task]) : params[:task]
-    task_params = ActionController::Parameters.new(raw_params)
+    if raw_params.class == ActionController::Parameters
+      task_params = raw_params
+    else
+      task_params = ActionController::Parameters.new(raw_params)
+    end
     @task = @list.tasks.new(task_params.permit(:name))
     if @task.save
       status = "success"
