@@ -11,6 +11,8 @@ gem 'rails', '5.2.3'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
 gem 'daemons'
+gem 'resque'
+gem 'resque-scheduler'
 
 gem 'ey_config'
 gem 'rails_autolink'
