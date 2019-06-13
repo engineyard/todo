@@ -1,0 +1,2 @@
+TaskCounter:
+  cron: "*/5 * * * *"
