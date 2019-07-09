@@ -1,4 +1,4 @@
-class CreateLists < ActiveRecord::Migration
+class CreateLists < ActiveRecord::Migration[5.2]
   def self.up
     create_table :lists do |t|
       t.string :name
