@@ -1,10 +1,3 @@
-<div id="hello">
-  <pre>
-    <% @headers.each do |key, value| %>
-      - <%= "#{key}=#{value}" %>
-    <% end %>
-  </pre>
-</div>
 <div id='tabs'>
 	<ul>
 		<% @count = 1%>
@@ -19,12 +12,12 @@
 	    </li>
 	</ul>
 
-
+	
 	<% @count = 1%>
 	<% @lists.each do |list| %>
-
+	
 	<div id='tabs-<%= @count %>' class="tab">
-
+	
 	    <div class="new-task">
     	    <%= simple_form_for(@task, :url => list_tasks_url(list)) do |f| %>
 
@@ -49,7 +42,7 @@
 				<% unless task.done %>
 					<%= simple_form_for(task, :url => list_task_url(list, task)) do |f| %>
 
-			 		<li>
+			 		<li> 
 					    <%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
 					    <%= f.button :submit ,  :class => 'hidden'   %>
 					    <%= raw auto_link( h(task.name), :html => { :target => '_blank' }) %>
@@ -57,14 +50,14 @@
 					        <%= link_to 'X', list_task_url(list, task), :confirm => 'Are you sure?', :method => :delete %>
 					    </p>
 			  		</li>
-
+		
 					<% end %>
 				<% end %>
 			<% end %>
 		</ul>
 		<% end %>
-
-		<% unless list.done_tasks.empty? %>
+		
+		<% unless list.done_tasks.empty? %>	
     		<ul class="tasks finished-tasks">
     		    <% list.done_tasks.each do |task| %>
         		<li class="finished">
@@ -76,36 +69,36 @@
         		<% end %>
     		</ul>
 		<% end %>
-
+		
 		<p class="delete-list">
 		    <%= link_to 'Delete this list', list, :confirm => 'Are you sure?', :method => :delete %>
 		</p>
 	</div>
 	<% @count += 1%>
-
+	
 	<%end%>
-
+	
 
     <div id="tabs-new-list">
         <h2>Add a New Task List</h2>
 	    <%= render :partial => '/lists/form' %>
 	</div>
 
-
+	
 </div>
 
 
 <% if listid = params[:list_id] %>
     <% prevlist = List.find listid %>
     <% tabindex = @lists.index(prevlist) %>
-<% end %>
+<% end %> 
 
 
 <script>
 	$('.box').click(function(event) {
 		$(this).parent().next().click();
 	});
-
+	
 	$(function() {
 	    var opts = {};
 	    <% if params[:list_id] %>
