@@ -33,7 +33,7 @@ platform :ruby do
   gem 'activerecord-postgis-adapter'
   gem 'sqlite3'
 
-  #gem 'newrelic_rpm', '~> 3.9.9'
+  gem 'newrelic_rpm'
   gem 'unicorn'
   gem 'puma'
   gem 'json', '>= 2.0'
