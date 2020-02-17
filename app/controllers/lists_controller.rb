@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
 
   def create
-    @list = List.new(params.require(:list).permit(:name))
+    @list = List.new(params[:list])
     if @list.save
         flash[:notice] = "Your list was created"
     else
