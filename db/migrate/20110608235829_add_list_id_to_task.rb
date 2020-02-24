@@ -1,4 +1,4 @@
-class AddListIdToTask < ActiveRecord::Migration
+class AddListIdToTask < ActiveRecord::Migration[4.2]
   def self.up
     add_column :tasks, :list_id, :integer
   end

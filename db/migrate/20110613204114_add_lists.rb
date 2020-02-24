@@ -1,4 +1,4 @@
-class AddLists < ActiveRecord::Migration
+class AddLists < ActiveRecord::Migration[4.2]
   
   class List < ActiveRecord::Base
     has_many :tasks
