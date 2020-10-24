@@ -35,6 +35,7 @@ platform :ruby do
   gem 'minitest'
   gem 'psych', '~> 2.0.8'
   gem 'racc', '1.4.15'
+  gem 'bigdecimal', '1.3.5'
 end
 
 platforms :jruby do
