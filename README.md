@@ -15,3 +15,11 @@ bundle exec ruby -Itest test/functional/lists_controller_test.rb
 # To run specific tests: (for example)
 
 bundle exec ruby -Itest test/functional/lists_controller_test.rb --name test_should_create_list
+
+# Sample block for devspaces testing
+
+Sample block for devspaces testing
+
+# Another block for testing
+
+tadaa
