@@ -17,6 +17,7 @@ class AddLists < ActiveRecord::Migration
     list.tasks.create(:name => 'Follow @eycloud http://twitter.com/eycloud')
     list.tasks.create(:name => 'We blog http://www.engineyard.com/blog/')
     list.tasks.create(:name => 'Rock on!')
+    list.tasks.create(:name => 'Running on Devspace!')
   end
 
   def self.down
