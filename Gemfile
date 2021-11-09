@@ -7,9 +7,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.0'
 
-gem 'engineyard', '~> 3.2.1'
-
-
 gem 'ey_config'
 gem 'rails_autolink'
 gem 'simple_form', '~> 3.1.0'
@@ -26,7 +23,7 @@ gem 'coffee-rails'
 gem 'uglifier'
 
 platform :ruby do
-  gem 'mysql2', '~> 0.3.17'
+  gem 'mysql2', '~> 0.5.3'
   gem 'pg', '~> 0.18.1'
   gem 'activerecord-postgis-adapter', '3.0.0.beta2'
   gem 'sqlite3'
@@ -65,3 +62,4 @@ end
 group :development, :test do
 
 end
+
