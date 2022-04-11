@@ -11,7 +11,7 @@ gem 'ey_config'
 gem 'rails_autolink'
 gem 'simple_form', '~> 3.1.0'
 
-gem 'nokogiri', '~> 1.6.0'
+gem 'nokogiri', '~> 1.13.4'
 gem 'rake', '~> 10.4'
 gem 'rgeo', '~> 0.3'
 
