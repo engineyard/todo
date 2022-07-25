@@ -332,6 +332,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sd_notify (0.1.1)
     simple_form (3.1.1)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -387,6 +388,7 @@ DEPENDENCIES
   rubysl-test-unit
   sass (~> 3.4.9)
   sass-rails
+  sd_notify
   simple_form (~> 3.1.0)
   sqlite3
   trinidad
