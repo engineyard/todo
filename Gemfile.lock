@@ -71,7 +71,7 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.1.0)
     minitest (5.11.3)
-    mysql2 (0.3.21)
+    mysql2 (0.4.10)
     newrelic_rpm (3.9.9.275)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -365,7 +365,7 @@ DEPENDENCIES
   jruby-openssl
   json (>= 2.0)
   minitest
-  mysql2 (~> 0.3.17)
+  mysql2 (~> 0.4.10)
   newrelic_rpm (~> 3.9.9)
   nokogiri (~> 1.6.0)
   pg (~> 0.18.1)
