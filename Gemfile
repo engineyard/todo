@@ -7,11 +7,16 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.0'
 
+#gem 'actionpack', '>= 4.0'
+#gem 'actionpack'
+gem 'sidekiq'
 gem 'ey_config'
 gem 'rails_autolink'
 gem 'simple_form', '~> 3.1.0'
 
+
 gem 'nokogiri', '~> 1.6.0'
+#gem 'nokogiri'
 gem 'rake', '~> 10.4'
 gem 'rgeo', '~> 0.3'
 
@@ -63,3 +68,5 @@ group :development, :test do
 
 end
 
+
+#gem "sidekiq", "~> 5.2"
