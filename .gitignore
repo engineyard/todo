@@ -3,3 +3,4 @@ db/*.sqlite3
 tmp
 .DS_Store
 .sass-cache
+.bundle
