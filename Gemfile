@@ -7,8 +7,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.0'
 
-#gem 'actionpack', '>= 4.0'
-#gem 'actionpack'
+gem 'sd_notify'
 gem 'sidekiq'
 gem 'ey_config'
 gem 'rails_autolink'
