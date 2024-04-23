@@ -5,11 +5,11 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 5.0.0'
 
 gem 'ey_config'
 gem 'rails_autolink'
-gem 'simple_form', '~> 3.1.0'
+gem 'simple_form', '~> 3.5.0'
 
 gem 'nokogiri', '~> 1.6.0'
 gem 'rake', '~> 10.4'
@@ -25,7 +25,7 @@ gem 'uglifier'
 platform :ruby do
   gem 'mysql2', '~> 0.3.17'
   gem 'pg', '~> 0.18.1'
-  gem 'activerecord-postgis-adapter', '3.0.0.beta2'
+  gem 'activerecord-postgis-adapter', '~> 4.0'
   gem 'sqlite3'
 
   gem 'newrelic_rpm', '~> 3.9.9'
