@@ -5,11 +5,11 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.1.0'
+gem 'rails', '~> 5.2.0'
 
 gem 'ey_config'
 gem 'rails_autolink'
-gem 'simple_form', '~> 3.5.0'
+gem 'simple_form', '~> 4.0.0'
 
 gem 'nokogiri', '~> 1.6.0'
 gem 'rake', '~> 10.4'
