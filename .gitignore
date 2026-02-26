@@ -3,4 +3,3 @@ db/*.sqlite3
 tmp
 .DS_Store
 .sass-cache
-Gemfile.lock

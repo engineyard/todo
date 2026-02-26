@@ -5,34 +5,36 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.12'
+gem 'rails', '~> 4.2.0'
 
-gem 'ey_config', '0.0.6'
-gem 'jquery-rails', '~> 3.0'
-gem 'rails_autolink', '~> 1.1'
-gem 'simple_form', '~> 2.1'
+gem 'ey_config'
+gem 'rails_autolink'
+gem 'simple_form', '~> 3.1.0'
 
-gem 'puma', '~> 2.6'
+gem 'nokogiri', '~> 1.6.0'
+gem 'rake', '~> 10.4'
+gem 'rgeo', '~> 0.3'
 
-
-group :assets do
-  gem 'sass-rails', '~> 3.2'
-  gem 'coffee-rails', '~> 3.2'
-  gem 'uglifier', '~> 2.3'
-end
+# Assets
+gem 'jquery-rails'
+gem 'sass', '~> 3.4.9'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
 platform :ruby do
-  gem 'mysql2', '~> 0.3'
-  gem 'pg', '~> 0.17'
-  gem 'sqlite3', '~> 1.3'
+  gem 'mysql2', '~> 0.3.17'
+  gem 'pg', '~> 0.18.1'
+  gem 'activerecord-postgis-adapter', '3.0.0.beta2'
+  gem 'sqlite3'
 
-  gem 'newrelic_rpm', '~> 3.6'
-  gem 'unicorn', '~> 4.7'
-
-  gem 'json', '~> 1.8'
-  gem 'minitest', '~> 4.7'
-  gem 'psych', '~> 2.0'
-  gem 'racc', '~> 1.4'
+  gem 'newrelic_rpm', '~> 3.9.9'
+  gem 'unicorn'
+  gem 'puma'
+  gem 'json', '>= 2.0'
+  gem 'minitest'
+  gem 'psych', '~> 2.0.8'
+  gem 'racc'
 end
 
 platforms :jruby do
@@ -45,12 +47,13 @@ platforms :jruby do
   gem 'jdbc-sqlite3', :require => false
   gem 'jdbc-postgres', :require => false
 
-  gem 'jruby-openssl', '~> 0.9'
-  gem 'trinidad', '~> 1.4'
+  gem 'jruby-openssl'
+  gem 'trinidad'
 end
 
 platform :rbx do
-  gem 'rubysl', '~> 2.0'
+  gem 'rubysl'
+  gem 'rubysl-test-unit', :require => false
 end
 
 # Bundle gems for the local environment. Make sure to
