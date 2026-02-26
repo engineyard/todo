@@ -20,6 +20,14 @@ class TasksControllerTest < ActionController::TestCase
     assert_redirected_to list_tasks_path(@list)
   end
 
+  test "should create task using json" do
+    assert_difference('Task.count') do
+      post :create, :task => @task.attributes, :list_id => @list.id, :format => :json
+    end
+
+    assert_response :success
+  end
+
   test "should update task" do
     put :update, :id => @task.to_param, :task => @task.attributes, :list_id => @list.id
     assert_redirected_to list_tasks_path(@list)

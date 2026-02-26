@@ -5,3 +5,5 @@ require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
 Listr::Application.load_tasks
+
+task :travis => ['db:create:all', 'db:migrate', :default]
